@@ -8,6 +8,7 @@ public class player : MonoBehaviour
     float MoveX = 0f;
     float MoveZ = 0f;
 
+    Character character;
     public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,20 @@ public class player : MonoBehaviour
         MoveZ = Input.GetAxisRaw("Vertical") * speed;
         Vector3 direction = new Vector3(MoveX, 0, MoveZ);
         rb.constraints = RigidbodyConstraints.FreezePositionY;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("推してます");
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                
+                Transform shotPosition = transform.GetChild(i);
+                Debug.Log("出てます");
+                //shotPositionの位置方向で
+                character.Shot(shotPosition);
+            }
+            //yield return new WaitForSeconds(character.shotinterval);
+        }
     }
 
     void FixedUpdate()
