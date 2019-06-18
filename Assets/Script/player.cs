@@ -14,6 +14,7 @@ public class player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        character = GetComponent<Character>();
     }
 
     // Update is called once per frame
@@ -29,11 +30,11 @@ public class player : MonoBehaviour
             Debug.Log("推してます");
             for (int i = 0; i < transform.childCount; i++)
             {
-                
                 Transform shotPosition = transform.GetChild(i);
                 Debug.Log("出てます");
                 //shotPositionの位置方向で
                 character.Shot(shotPosition);
+           
             }
             //yield return new WaitForSeconds(character.shotinterval);
         }

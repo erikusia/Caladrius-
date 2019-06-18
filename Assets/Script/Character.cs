@@ -29,4 +29,9 @@ public class Character : MonoBehaviour
     {
         GetComponent<Rigidbody>().velocity = direcion * speed;
     }
+
+    //public void Destroy()
+    //{
+    //    Destroy(bullet, 3f);
+    //}
 }
