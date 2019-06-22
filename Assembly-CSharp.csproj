@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Gage3.cs" />
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\player.cs" />
+     <Compile Include="Assets\Scripts\PlayerNowPos.cs" />
      <Compile Include="Assets\Scripts\playershooting.cs" />
      <Compile Include="Assets\Scripts\Zgage.cs" />
      <Compile Include="Assets\StarSparrow\Readme\Readme Files\Scripts\Readme.cs" />
