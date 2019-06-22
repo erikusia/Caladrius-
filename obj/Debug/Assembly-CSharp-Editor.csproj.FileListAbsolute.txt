@@ -205,13 +205,11 @@ C:\Cocos\Projects\1906\Temp\bin\Debug\ExCSS.Unity.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\Unity.IvyParser.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
-C:\Cocos\Projects\1906\Temp\bin\Debug\System.Diagnostics.Tracing.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\Boo.Lang.Compiler.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\Boo.Lang.PatternMatching.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\Boo.Lang.Parser.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\Boo.Lang.Useful.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\Unity.CecilTools.dll
-C:\Cocos\Projects\1906\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Cocos\Projects\1906\Temp\bin\Debug\UnityEngine.xml
 C:\Cocos\Projects\1906\Temp\bin\Debug\UnityEditor.xml
 C:\Cocos\Projects\1906\Temp\bin\Debug\Unity.Timeline.Editor.pdb
@@ -290,3 +288,5 @@ C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp-Editor.csproj.CoreCompileInputs
 C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp-Editor.csproj.CopyComplete
 C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp-Editor.pdb
+C:\Cocos\Projects\1906\Temp\bin\Debug\System.Diagnostics.Tracing.dll
+C:\Cocos\Projects\1906\Temp\bin\Debug\Assembly-CSharp.pdb
