@@ -11,8 +11,7 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody>().velocity = transform.forward* BulletSpeed;
     }
 
-<<<<<<< HEAD
-=======
+
     // Update is called once per frame
     void Update()
     {
@@ -30,5 +29,5 @@ public class Bullet : MonoBehaviour
         //Rect rc = new Rect(Vector2.zero, new Vector2(1000, 5000));
         //rc.Contains()
     }
->>>>>>> master
+
 }
