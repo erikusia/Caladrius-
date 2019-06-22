@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Character character;
+    public int rotspeed;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -14,7 +15,8 @@ public class Enemy : MonoBehaviour
 
         while (true)
         {
-            for(int i = 0; i < transform.childCount; i++)
+            yield return new WaitForSeconds(0.05f);
+            for (int i=0;i<transform.childCount;i++)
             {
                 Transform shotPosition = transform.GetChild(i);
 
@@ -29,6 +31,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.Rotate(Vector3.forward * -1);
+        transform.Rotate(Vector3.forward * rotspeed);
     }
 }

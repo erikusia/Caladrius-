@@ -8,18 +8,6 @@ public class Character : MonoBehaviour
     public float shotinterval;
     public GameObject bullet;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Shot(Transform origin)
     {
         Instantiate(bullet, origin.position, origin.rotation);

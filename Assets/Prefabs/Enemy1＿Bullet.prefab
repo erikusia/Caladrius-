@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6959929673756167910}
   - component: {fileID: 4165928270706957932}
   - component: {fileID: 1637738066126913725}
+  - component: {fileID: 5687801178799197123}
   m_Layer: 0
   m_Name: "Enemy1\uFF3FBullet"
   m_TagString: Untagged
@@ -104,7 +105,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6959929673756167929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 078840adfbb85654fb564e8fbca5766d, type: 3}
+  m_Script: {fileID: 11500000, guid: be1e1b7cbb83db14092146dc8f12154c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: -3
+  BulletSpeed: 7
+--- !u!136 &5687801178799197123
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959929673756167929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.50657654
+  m_Height: 2.9827542
+  m_Direction: 2
+  m_Center: {x: -0.025667027, y: 0.0000011920929, z: 0.022816062}
