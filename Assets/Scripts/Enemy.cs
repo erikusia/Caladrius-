@@ -15,7 +15,8 @@ public class Enemy : MonoBehaviour
 
         while (true)
         {
-            for(int i=0;i<transform.childCount;i++)
+            yield return new WaitForSeconds(0.05f);
+            for (int i=0;i<transform.childCount;i++)
             {
                 Transform shotPosition = transform.GetChild(i);
 
