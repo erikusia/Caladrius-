@@ -105,6 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6959929673756167929}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD:Assets/Prefabs/NormalEnemyBullet.prefab
   m_Script: {fileID: 11500000, guid: be1e1b7cbb83db14092146dc8f12154c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -123,3 +124,9 @@ CapsuleCollider:
   m_Height: 2.9988134
   m_Direction: 2
   m_Center: {x: 0.011378527, y: 0.0000011920929, z: 0.048844613}
+=======
+  m_Script: {fileID: 11500000, guid: b245d517caaaa064fa5bd95de69b687d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletSpeed: 50
+>>>>>>> master:Assets/Prefabs/Enemy1＿Bullet.prefab

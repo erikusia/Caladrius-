@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/iwatani.unity
+=======
+- path: Assets/Scenes/kaede.unity
+>>>>>>> master
   isLoaded: 1
   isActive: 1
   isSubScene: 0
