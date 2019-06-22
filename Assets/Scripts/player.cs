@@ -48,6 +48,6 @@ public class player : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector3(MoveX, 0, MoveZ);
+       rb.velocity = new Vector3(MoveX, 0, MoveZ);
     }
 }
