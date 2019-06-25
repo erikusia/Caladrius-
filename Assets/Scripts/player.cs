@@ -1,15 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class player : MonoBehaviour
 {
     public float speed = 5f;
-    float MoveX = 0f;
-    float MoveZ = 0f;
+    float MoveX;
+    float MoveZ;
 
     Character character;
-    public Rigidbody rb;
+    Rigidbody rb;
     private int timeCount;
 
     // Start is called before the first frame update
@@ -25,14 +26,18 @@ public class player : MonoBehaviour
         MoveX = Input.GetAxisRaw("Horizontal") * speed;
         MoveZ = Input.GetAxisRaw("Vertical") * speed;
         Vector3 direction = new Vector3(MoveX, 0, MoveZ);
-        rb.constraints = RigidbodyConstraints.FreezePositionY;
+
         timeCount += 1;
 
-        if (Input.GetMouseButton(0))
+        //移動制限
+        transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
+
+
+        if (Input.GetMouseButton(0) || Input.GetButton("Abutton"))
         {
             Debug.Log("推してます");
 
-            if(timeCount % 5 == 0)
+            if (timeCount % 2f == 0)
             {
                 for (int i = 0; i < transform.childCount; i++)
                 {
@@ -41,8 +46,8 @@ public class player : MonoBehaviour
                     //shotPositionの位置方向で
                     character.Shot(shotPosition);
                 }
-                //yield return new WaitForSeconds(character.shotinterval);
             }
+
         }
     }
 
@@ -50,4 +55,8 @@ public class player : MonoBehaviour
     {
        rb.velocity = new Vector3(MoveX, 0, MoveZ);
     }
+
+
+
+
 }

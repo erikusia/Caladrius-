@@ -4,20 +4,34 @@ using UnityEngine;
 
 public class Scroll : MonoBehaviour
 {
-    int posZ;
+    public float scrolespeed;
+    Vector3 nowpos;
+    Transform nowtrans;
+
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        //Startmove();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        posZ++;
+        //transformの取得
+        nowtrans = transform;
+        //positionの取得
+        nowpos = transform.position;
+        //positionのzをscrolespeed分引く
+        nowpos.z -= scrolespeed;
+        //positionを設定
+        nowtrans.position = nowpos;
 
-        transform.position = new Vector3(0, 0, -posZ*0.3f);
+        //Startmove();
 
+    }
+
+    void Startmove()
+    {
+        iTween.MoveTo(gameObject, iTween.Hash("z", -86, "time", scrolespeed));
     }
 }

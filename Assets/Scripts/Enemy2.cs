@@ -9,7 +9,8 @@ public class Enemy2 : MonoBehaviour
     IEnumerator Start()
     {
         character = GetComponent<Character>();
-        character.Move(Vector3.forward * -1);
+        //character.Move(Vector3.forward * -1);
+        StartMove();
 
         while (true)
         {
@@ -30,5 +31,10 @@ public class Enemy2 : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void StartMove()
+    {
+        iTween.MoveBy(gameObject, iTween.Hash("x", 5f));
     }
 }
