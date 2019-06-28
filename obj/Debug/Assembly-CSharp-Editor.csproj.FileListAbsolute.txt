@@ -288,5 +288,5 @@ C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp-Editor.csproj.CoreCompileInputs
 C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp-Editor.csproj.CopyComplete
 C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp-Editor.pdb
-C:\Cocos\Projects\1906\Temp\bin\Debug\System.Diagnostics.Tracing.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Cocos\Projects\1906\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb

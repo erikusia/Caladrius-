@@ -269,6 +269,7 @@ C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp.dll
 C:\Cocos\Projects\1906\obj\Debug\Assembly-CSharp.pdb
+C:\Cocos\Projects\1906\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 C:\Cocos\Projects\1906\Temp\bin\Debug\Boo.Lang.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\UnityEditor.UI.dll
 C:\Cocos\Projects\1906\Temp\bin\Debug\UnityEditor.UI.xml

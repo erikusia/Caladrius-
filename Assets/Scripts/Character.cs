@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
     public void Shot(Transform origin)
     {
         Instantiate(bullet, origin.position, origin.rotation);
+        
     }
 
     public void Move(Vector3 direcion)

@@ -13,11 +13,16 @@ public class player : MonoBehaviour
     Rigidbody rb;
     private int timeCount;
 
+    public float hp = 1;
+
+    Bullet enemyBullet;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         character = GetComponent<Character>();
+        
     }
 
     // Update is called once per frame
@@ -45,18 +50,38 @@ public class player : MonoBehaviour
                     Debug.Log("出てます");
                     //shotPositionの位置方向で
                     character.Shot(shotPosition);
+                    
                 }
             }
 
         }
     }
 
+
+
     void FixedUpdate()
     {
        rb.velocity = new Vector3(MoveX, 0, MoveZ);
+
     }
 
 
-
+    void OnTriggerEnter(Collider col)
+    {
+        
+        if (col.gameObject.tag == "EnemyBullet")
+        {
+            Debug.Log("ダメージ喰らってる");
+            enemyBullet = col.gameObject.GetComponent<Bullet>();
+            // ヒットポイントを減らす
+            hp = hp - enemyBullet.power;
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+                Debug.Log("死亡");
+            }
+        }
+        
+    }
 
 }
