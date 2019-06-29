@@ -1,15 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class player : MonoBehaviour
 {
     public float speed = 5f;
-    float MoveX = 0f;
-    float MoveZ = 0f;
+    float MoveX;
+    float MoveZ;
 
+    public float shotinterval;
     Character character;
-    public Rigidbody rb;
+    Rigidbody rb;
     private int timeCount;
 
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         character = GetComponent<Character>();
+        StartCoroutine(PlayerShot());
     }
 
     // Update is called once per frame
@@ -25,14 +28,23 @@ public class player : MonoBehaviour
         MoveX = Input.GetAxisRaw("Horizontal") * speed;
         MoveZ = Input.GetAxisRaw("Vertical") * speed;
         Vector3 direction = new Vector3(MoveX, 0, MoveZ);
-        rb.constraints = RigidbodyConstraints.FreezePositionY;
+
         timeCount += 1;
 
-        if (Input.GetMouseButton(0))
-        {
-            Debug.Log("推してます");
+        //移動制限
+        transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
+    }
 
-            if(timeCount % 5 == 0)
+    void FixedUpdate()
+    {
+       rb.velocity = new Vector3(MoveX, 0, MoveZ);
+    }
+
+    IEnumerator PlayerShot()
+    {
+        while (true)
+        {
+            if (Input.GetMouseButton(0) || Input.GetButton("Abutton"))
             {
                 for (int i = 0; i < transform.childCount; i++)
                 {
@@ -41,13 +53,9 @@ public class player : MonoBehaviour
                     //shotPositionの位置方向で
                     character.Shot(shotPosition);
                 }
-                //yield return new WaitForSeconds(character.shotinterval);
+                yield return new WaitForSeconds(shotinterval);
             }
+            yield return null;
         }
-    }
-
-    void FixedUpdate()
-    {
-       rb.velocity = new Vector3(MoveX, 0, MoveZ);
     }
 }
