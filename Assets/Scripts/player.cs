@@ -6,21 +6,19 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     public float speed = 5f;
-<<<<<<< HEAD
+
     float MoveX = 0f;
     float MoveZ = 0f;
+    float InputX;
     public int rotspeed;
-=======
-    float MoveX;
-    float MoveZ;
->>>>>>> master
+    public float adRotate = 10;
+
 
     public float shotinterval;
     Character character;
     Rigidbody rb;
     private int timeCount;
-
-    public Vector3 rot;
+    float zRotate = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -34,27 +32,42 @@ public class player : MonoBehaviour
     void Update()
     {
         MoveX = Input.GetAxisRaw("Horizontal") * speed;
+        InputX = Input.GetAxisRaw("Horizontal");
         MoveZ = Input.GetAxisRaw("Vertical") * speed;
         Vector3 direction = new Vector3(MoveX, 0, MoveZ);
 
         timeCount += 1;
 
-<<<<<<< HEAD
+
         transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
 
         if (Input.GetMouseButton(0))
         {
             Debug.Log("推してます");
-=======
-        //移動制限
-        transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
+
+            //移動制限
+            transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
+        }
+
+        if (Input.GetKey(KeyCode.D)|| InputX >=0.8)
+        {
+            Debug.Log("D");
+            zRotate = Mathf.Clamp(zRotate - adRotate * Time.frameCount, -40, 40);
+            transform.eulerAngles = new Vector3(0, 0, zRotate);
+        }
+        if (Input.GetKey(KeyCode.A)||InputX <=-0.8)
+        {
+            Debug.Log("A");
+            zRotate = Mathf.Clamp(zRotate + adRotate * Time.frameCount , -40, 40);
+            transform.eulerAngles = new Vector3(0, 0, zRotate);
+        }
     }
 
     void FixedUpdate()
     {
-       rb.velocity = new Vector3(MoveX, 0, MoveZ);
+        rb.velocity = new Vector3(MoveX, 0, MoveZ);
     }
->>>>>>> master
+
 
     IEnumerator PlayerShot()
     {
@@ -74,14 +87,4 @@ public class player : MonoBehaviour
             yield return null;
         }
     }
-<<<<<<< HEAD
-
-    void FixedUpdate()
-    {
-       rb.velocity = new Vector3(MoveX, 0, MoveZ);
-
-
-    }
-=======
->>>>>>> master
 }

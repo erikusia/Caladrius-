@@ -163,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b47f455dcb293542900bd98e64435d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1650706464}
 --- !u!1 &105981985
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b47f455dcb293542900bd98e64435d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1650706464}
 --- !u!1001 &127204187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -552,10 +550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09998243f2c3c4647bd565196a024daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  movespeed: 0
   shotinterval: 1
   bulletP: {fileID: 6959929673756167929, guid: 61848385a915ab145980f7f5b827e959, type: 3}
-  bullet: {fileID: 6959929673756167929, guid: 61848385a915ab145980f7f5b827e959, type: 3}
+  bullet: {fileID: 3675266543846072961, guid: 02aafbe967f53ad4698797bd66a38904, type: 3}
   burstbullet: {fileID: 4136641022522549595, guid: 410259efad5cd584a802c68eb29b0696,
     type: 3}
   circrebullets: {fileID: 8541159992024890679, guid: b568fce5182fa394da70384e946a2dc1,
@@ -673,12 +671,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!4 &1650706464 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8208230015618290879, guid: 36fea44e211c5bb468668ca79f4c017f,
-    type: 3}
-  m_PrefabInstance: {fileID: 8207455247665608805}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1737678453
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b47f455dcb293542900bd98e64435d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1650706464}
 --- !u!1001 &861907109674570654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -983,11 +974,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8206650041496227463, guid: 36fea44e211c5bb468668ca79f4c017f,
-        type: 3}
-      propertyPath: m_Name
-      value: StarSparrow1
-      objectReference: {fileID: 0}
     - target: {fileID: 8208230015618290879, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1058,16 +1044,42 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 8206650041496227463, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8207455249215581600, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: bulletP
       value: 
-      objectReference: {fileID: 6959929673756167929, guid: 61848385a915ab145980f7f5b827e959,
+      objectReference: {fileID: 6959929673756167929, guid: 8f2332cdbcde5ce44bd49c1532dedb5d,
+        type: 3}
+    - target: {fileID: 8207455249215581600, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 6959929673756167929, guid: 8f2332cdbcde5ce44bd49c1532dedb5d,
         type: 3}
     - target: {fileID: 8207455249215581603, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: rotspeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207455249215581603, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: adRotate
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207455249215581603, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: shotinterval
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207455249215581603, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36fea44e211c5bb468668ca79f4c017f, type: 3}
