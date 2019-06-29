@@ -9,7 +9,8 @@ public class Enemy2 : MonoBehaviour
     IEnumerator Start()
     {
         character = GetComponent<Character>();
-        character.Move(Vector3.forward * -1);
+        //character.Move(Vector3.forward * -1);
+        StartMove();
 
         while (true)
         {
@@ -28,6 +29,11 @@ public class Enemy2 : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+
+    void StartMove()
     {
         
     }

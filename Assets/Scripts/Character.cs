@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public float speed;
+    public float movespeed;
     public float shotinterval;
     public GameObject bulletP;
     public GameObject bullet;
@@ -37,6 +37,6 @@ public class Character : MonoBehaviour
 
     public void Move(Vector3 direcion)
     {
-        GetComponent<Rigidbody>().velocity = direcion * speed;
+        GetComponent<Rigidbody>().velocity = direcion * movespeed;
     }
 }

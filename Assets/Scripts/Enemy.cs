@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
             }
 
             yield return new WaitForSeconds(character.shotinterval);
+            
         }
     }
 

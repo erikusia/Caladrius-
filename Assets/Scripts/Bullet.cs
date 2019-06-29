@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log("画面外です");
 
+
         //Rect rc = new Rect(Vector2.zero, new Vector2(1000, 5000));
         //rc.Contains()
     }

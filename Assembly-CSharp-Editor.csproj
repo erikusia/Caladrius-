@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Pixelplacement\iTweenPath\Editor\iTweenPathEditor.cs" />
     <Compile Include="Assets\StarSparrow\Readme\Readme Files\Scripts\Editor\ReadmeEditor.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Cocos/Projects/1906team/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
