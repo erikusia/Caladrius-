@@ -7,10 +7,13 @@ public class player : MonoBehaviour
     public float speed = 5f;
     float MoveX = 0f;
     float MoveZ = 0f;
+    public int rotspeed;
 
     Character character;
     public Rigidbody rb;
     private int timeCount;
+
+    public Vector3 rot;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,8 @@ public class player : MonoBehaviour
         Vector3 direction = new Vector3(MoveX, 0, MoveZ);
         rb.constraints = RigidbodyConstraints.FreezePositionY;
         timeCount += 1;
+
+        transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
 
         if (Input.GetMouseButton(0))
         {
@@ -49,5 +54,7 @@ public class player : MonoBehaviour
     void FixedUpdate()
     {
        rb.velocity = new Vector3(MoveX, 0, MoveZ);
+
+
     }
 }
