@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float BulletSpeed;
-    public float power = 1;
-
+    public float BulletSpeed = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +25,7 @@ public class Bullet : MonoBehaviour
     private void OnBecameInvisible()
     {
         Debug.Log("画面外です");
+
 
         //Rect rc = new Rect(Vector2.zero, new Vector2(1000, 5000));
         //rc.Contains()

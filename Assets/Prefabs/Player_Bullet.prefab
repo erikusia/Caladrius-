@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fc09655698d549c44918901b3b6d0e45, type: 2}
+  - {fileID: 2100000, guid: ca60783a9eb24b3409799ccf94e45d91, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6959929673756167929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f9a5dcce00ac5c4e8b08330534218df, type: 3}
+  m_Script: {fileID: 11500000, guid: 1119023e7673eb9478d89cd83943d633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSpeed: 60

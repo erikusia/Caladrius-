@@ -6,11 +6,6 @@ public class Enemy : MonoBehaviour
 {
     Character character;
     public int rotspeed;
-    public float hp = 1;
-
-    Bullet playerBullet;
-
-    public float power = 1;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -25,41 +20,18 @@ public class Enemy : MonoBehaviour
             {
                 Transform shotPosition = transform.GetChild(i);
 
-
                 //shotPositionの位置方向で撃つ
-                character.Shot(shotPosition);
-
-                
+                character.Shot0(shotPosition);
             }
 
             yield return new WaitForSeconds(character.shotinterval);
+            
         }
     }
-
-   
 
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(Vector3.forward * rotspeed);
-    }
-
-    void OnTriggerEnter(Collider col)
-    {
-        
-        if (col.gameObject.tag == "PlayerBullet")
-        {
-            playerBullet = col.gameObject.GetComponent<Bullet>();
-
-            Debug.Log("敵Hit");
-            // ヒットポイントを減らす
-            hp = hp - playerBullet.power;
-            if (hp <= 0)
-            {
-                Destroy(gameObject);
-                Debug.Log("敵死亡");
-            }
-        }
-        
     }
 }
