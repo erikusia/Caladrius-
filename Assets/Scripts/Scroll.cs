@@ -26,12 +26,12 @@ public class Scroll : MonoBehaviour
         //positionを設定
         nowtrans.position = nowpos;
 
-        //Startmove();
+        Debug.Log(nowpos);
 
-    }
+        if (nowpos.z <= -120)
+        {
+            this.enabled = false;
+        }
 
-    void Startmove()
-    {
-        iTween.MoveTo(gameObject, iTween.Hash("z", -86, "time", scrolespeed));
     }
 }

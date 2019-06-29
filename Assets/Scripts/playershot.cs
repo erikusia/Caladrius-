@@ -19,17 +19,5 @@ public class playershot : MonoBehaviour
         }
     }
 
-    private IEnumerable PlayerShot()
-    {
-        Debug.Log("コルーチンスタート");
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Transform shotPosition = transform.GetChild(i);
-            Debug.Log("出てます");
-            //shotPositionの位置方向で
-            character.Shot(shotPosition);
-        }
 
-        yield return new WaitForSeconds(0.05f);
-    }
 }
