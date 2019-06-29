@@ -792,6 +792,12 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2624735699730411222, guid: c22040160031c2044b1924040b455abe,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3675266543846072961, guid: 02aafbe967f53ad4698797bd66a38904,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c22040160031c2044b1924040b455abe, type: 3}
 --- !u!1001 &1517997263
@@ -804,7 +810,7 @@ PrefabInstance:
     - target: {fileID: 8206650041496227463, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: m_Name
-      value: StarSparrow1
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8206650041496227463, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
@@ -899,6 +905,11 @@ PrefabInstance:
     - target: {fileID: 8207455249215581600, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: bullet
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207455249215581600, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: bulletP
       value: 
       objectReference: {fileID: 6959929673756167929, guid: 8f2332cdbcde5ce44bd49c1532dedb5d,
         type: 3}
