@@ -35,6 +35,6 @@ public class Enemy2 : MonoBehaviour
 
     void StartMove()
     {
-        iTween.MoveBy(gameObject, iTween.Hash("x", 5f));
+        
     }
 }

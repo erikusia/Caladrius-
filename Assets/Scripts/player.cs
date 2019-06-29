@@ -9,6 +9,7 @@ public class player : MonoBehaviour
     float MoveX;
     float MoveZ;
 
+    public float shotinterval;
     Character character;
     Rigidbody rb;
     private int timeCount;
@@ -18,6 +19,7 @@ public class player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         character = GetComponent<Character>();
+        StartCoroutine(PlayerShot());
     }
 
     // Update is called once per frame
@@ -31,13 +33,18 @@ public class player : MonoBehaviour
 
         //移動制限
         transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
+    }
 
+    void FixedUpdate()
+    {
+       rb.velocity = new Vector3(MoveX, 0, MoveZ);
+    }
 
-        if (Input.GetMouseButton(0) || Input.GetButton("Abutton"))
+    IEnumerator PlayerShot()
+    {
+        while (true)
         {
-            Debug.Log("推してます");
-
-            if (timeCount % 2f == 0)
+            if (Input.GetMouseButton(0) || Input.GetButton("Abutton"))
             {
                 for (int i = 0; i < transform.childCount; i++)
                 {
@@ -46,17 +53,9 @@ public class player : MonoBehaviour
                     //shotPositionの位置方向で
                     character.Shot(shotPosition);
                 }
+                yield return new WaitForSeconds(shotinterval);
             }
-
+            yield return null;
         }
     }
-
-    void FixedUpdate()
-    {
-       rb.velocity = new Vector3(MoveX, 0, MoveZ);
-    }
-
-
-
-
 }
