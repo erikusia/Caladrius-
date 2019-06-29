@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
 
     Bullet playerBullet;
 
+    public float power = 1;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {

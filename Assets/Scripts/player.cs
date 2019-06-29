@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
@@ -16,14 +17,34 @@ public class player : MonoBehaviour
     public float hp = 1;
 
     Bullet enemyBullet;
+    Enemy AttackEnemy;
+
+    private Slider playerHPSlider;
+    public GameObject[] playerIcons;
+
+    public int destroyCount = 0;
+
+    public bool isMuteki = false;
+
+   // public float interval = 0.1f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         character = GetComponent<Character>();
-        
+      //  StartCoroutine("Blink");
     }
+
+    //IEnumerator Blink()
+    //{
+    //    while (true)
+    //    {
+    //        var renderComponent = GetComponent<Renderer>();
+    //        renderComponent.enabled = !renderComponent.enabled;
+    //        yield return new WaitForSeconds(interval);
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()
@@ -68,20 +89,138 @@ public class player : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        
-        if (col.gameObject.tag == "EnemyBullet")
+        if (col.gameObject.CompareTag("Enemy") && isMuteki == false)
         {
-            Debug.Log("ダメージ喰らってる");
-            enemyBullet = col.gameObject.GetComponent<Bullet>();
-            // ヒットポイントを減らす
-            hp = hp - enemyBullet.power;
-            if (hp <= 0)
+
+            Invoke("Retry", 0.01f);
+
+
+            if (col.gameObject.tag == "Enemy")
             {
-                Destroy(gameObject);
-                Debug.Log("死亡");
+                AttackEnemy = col.gameObject.GetComponent<Enemy>();
+                // ヒットポイントを減らす
+                hp = hp - AttackEnemy.power;
+
+                Destroy(col.gameObject);
+
+                if (hp == 2)
+                {
+
+                    Debug.Log("敵からダメージを喰らっている");
+                    destroyCount += 1;
+
+                    UpdatePlayerIcons();
+
+                }
+
+                if (hp == 1)
+                {
+                    Debug.Log("敵からダメージを喰らっている2");
+                    destroyCount += 1;
+
+                    UpdatePlayerIcons();
+                }
+
+                if (hp <= 0)
+                {
+                    Debug.Log("敵からダメージを喰らっている3");
+                    //HPが0となったら破壊された回数を1増やす
+                    destroyCount += 1;
+
+                    // 命令ブロック（メソッド）を呼び出す。
+                    UpdatePlayerIcons();
+
+                    Destroy(gameObject);
+                    Debug.Log("敵に当たり死亡");
+                }
+
+
+            }
+
+         
+        }
+
+        if (col.gameObject.CompareTag("EnemyBullet") && isMuteki == false)
+        {
+
+
+            Invoke("Retry", 0.01f);
+
+
+            if (col.gameObject.tag == "EnemyBullet")
+            {
+                enemyBullet = col.gameObject.GetComponent<Bullet>();
+                // ヒットポイントを減らす
+                hp = hp - enemyBullet.power;
+
+                Destroy(col.gameObject);
+
+                if (hp == 2)
+                {
+
+                    Debug.Log("ダメージを喰らっている");
+                    destroyCount += 1;
+
+                    UpdatePlayerIcons();
+
+                }
+
+                if (hp == 1)
+                {
+                    Debug.Log("ダメージを喰らっている2");
+                    destroyCount += 1;
+
+                    UpdatePlayerIcons();
+                }
+
+                if (hp <= 0)
+                {
+                    Debug.Log("ダメージを喰らっている3");
+                    //HPが0となったら破壊された回数を1増やす
+                    destroyCount += 1;
+
+                    // 命令ブロック（メソッド）を呼び出す。
+                    UpdatePlayerIcons();
+
+                    Destroy(gameObject);
+                    Debug.Log("死亡");
+                }
+
+
+            }
+
+        }
+
+
+    }
+
+    void UpdatePlayerIcons()
+    {
+        for(int i = 0; i < playerIcons.Length; i++)
+        {
+            if(destroyCount <= i)
+            {
+                playerIcons[i].SetActive(true);
+            }
+            else
+            {
+                playerIcons[i].SetActive(false);
             }
         }
+    }
+
+    void Retry()
+    {
+        this.gameObject.SetActive(true);
         
+        //無敵時間
+        isMuteki = true;
+        Invoke("MutekiOff", 3.0f);
+    }
+
+    void MutekiOff()
+    {
+        isMuteki = false;
     }
 
 }

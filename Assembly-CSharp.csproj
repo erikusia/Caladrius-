@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Pixelplacement\iTweenPath\iTweenPath.cs" />
+     <Compile Include="Assets\Scripts\Blink.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\DestroyArea.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\Scripts\Gage.cs" />
      <Compile Include="Assets\Scripts\Gage2.cs" />
      <Compile Include="Assets\Scripts\Gage3.cs" />
+     <Compile Include="Assets\Scripts\HomingLaser.cs" />
      <Compile Include="Assets\Scripts\iTweenPathMove.cs" />
      <Compile Include="Assets\Scripts\player.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
