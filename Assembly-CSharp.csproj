@@ -72,12 +72,16 @@
      <Compile Include="Assets\Scripts\Gage2.cs" />
      <Compile Include="Assets\Scripts\Gage3.cs" />
      <Compile Include="Assets\Scripts\HomingLaser.cs" />
+     <Compile Include="Assets\Scripts\HPBar.cs" />
      <Compile Include="Assets\Scripts\iTweenPathMove.cs" />
      <Compile Include="Assets\Scripts\player.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerLimit.cs" />
      <Compile Include="Assets\Scripts\PlayerNowPos.cs" />
      <Compile Include="Assets\Scripts\playershot.cs" />
+     <Compile Include="Assets\Scripts\sceneManager\GameOverManager.cs" />
+     <Compile Include="Assets\Scripts\sceneManager\GamePlayManager.cs" />
+     <Compile Include="Assets\Scripts\sceneManager\TitleManager.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\Scroll.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -9,9 +10,16 @@ public class BossEnemy : MonoBehaviour
     int state;
     public float TimeCount = 0;
 
+    Bullet playerBullet;
+    public float maxHealth;
+    // RectTranform コンポーネントを格納する変数
+    public RectTransform healthBar;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
+
+  
         character = GetComponent<Character>();
         character.Move(transform.forward * -1);
         state = 0;
@@ -104,6 +112,30 @@ public class BossEnemy : MonoBehaviour
 
         
     }
+
+    //void OnTriggerEnter(Collider col)
+    //{
+    //    if (col.gameObject.tag == "PlayerBullet")
+    //    {
+    //        // ヒットポイントを減らす
+    //        maxHealth = maxHealth - playerBullet.power;
+
+    //        // 現在の体力値が 0 以下の場合
+    //        if (maxHealth <= 0)
+    //        {
+    //            // 現在の体力値に 0 を代入
+    //            maxHealth = 0;
+    //            // コンソールに"Dead!"を表示する
+    //            Debug.Log("Dead!");
+    //        }
+    //        // RectTranform コンポーネントのサイズを体力値に合わせて変更
+    //        //（X値に currentHealth を代入、Y値は RectTranform コンポーネントのY値を代入）
+    //        healthBar.sizeDelta = new Vector2(maxHealth, healthBar.sizeDelta.y);
+
+
+    //    }
+    //}
+
 
     // Update is called once per frame
     void Update()

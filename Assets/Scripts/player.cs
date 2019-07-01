@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -145,8 +146,8 @@ public class player : MonoBehaviour
                     {
                         Debug.Log("敵からダメージを喰らっている2");
                         destroyCount += 1;
-
-                        UpdatePlayerIcons();
+                    StartCoroutine("Blink");
+                    UpdatePlayerIcons();
                     }
 
                     if (hp <= 0)
@@ -160,7 +161,9 @@ public class player : MonoBehaviour
 
                         Destroy(gameObject);
                         Debug.Log("敵に当たり死亡");
-                    }
+
+                    SceneManager.LoadScene("GameOver");
+                }
 
 
                 }
@@ -188,7 +191,7 @@ public class player : MonoBehaviour
 
                     Debug.Log("ダメージを喰らっている");
                     destroyCount += 1;
-
+                    StartCoroutine("Blink");
                     UpdatePlayerIcons();
 
                 }
@@ -197,7 +200,7 @@ public class player : MonoBehaviour
                 {
                     Debug.Log("ダメージを喰らっている2");
                     destroyCount += 1;
-
+                    StartCoroutine("Blink");
                     UpdatePlayerIcons();
                 }
 
@@ -212,6 +215,8 @@ public class player : MonoBehaviour
 
                     Destroy(gameObject);
                     Debug.Log("死亡");
+
+                    SceneManager.LoadScene("End");
                 }
 
 
