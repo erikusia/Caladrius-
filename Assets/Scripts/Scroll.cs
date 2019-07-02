@@ -31,6 +31,6 @@ public class Scroll : MonoBehaviour
             this.enabled = false;
         }
 
-        Debug.Log(Time.time);
+        //Debug.Log(Time.time);
     }
 }

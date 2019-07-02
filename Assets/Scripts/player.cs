@@ -25,7 +25,7 @@ public class player : MonoBehaviour
 
     Bullet enemyBullet;
     Enemy AttackEnemy;
-    public int hp = 1;
+    public int hp = 3;
 
    // private Slider playerHPSlider;
     public GameObject[] playerIcons;
@@ -216,7 +216,7 @@ public class player : MonoBehaviour
                     Destroy(gameObject);
                     Debug.Log("死亡");
 
-                    SceneManager.LoadScene("End");
+                    SceneManager.LoadScene("GameOver");
                 }
 
 
