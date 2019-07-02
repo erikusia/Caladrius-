@@ -23,7 +23,7 @@ public class Enemy2 : MonoBehaviour
                 Transform shotPosition = transform.GetChild(i);
 
                 //shotPositionの位置方向で撃つ
-                character.Shot(shotPosition);
+                character.Shot0(shotPosition);
             }
 
             yield return new WaitForSeconds(character.shotinterval);
