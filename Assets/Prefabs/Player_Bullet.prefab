@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5687801178799197123}
   m_Layer: 0
   m_Name: Player_Bullet
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,10 +105,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6959929673756167929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f9a5dcce00ac5c4e8b08330534218df, type: 3}
+  m_Script: {fileID: 11500000, guid: 1119023e7673eb9478d89cd83943d633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 50
+  BulletSpeed: 60
+  power: 1
 --- !u!136 &5687801178799197123
 CapsuleCollider:
   m_ObjectHideFlags: 0
