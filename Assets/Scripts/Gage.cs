@@ -8,6 +8,7 @@ public class Gage : MonoBehaviour
     Slider slider;
     float gage = 100;
     private int timeCount;
+    Button buttonComponent;
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +20,25 @@ public class Gage : MonoBehaviour
     void Update()
     {
         timeCount += 1;
-        if (Input.GetKeyDown(KeyCode.R))
+
+        //buttonComponent.interactable = true;
+        if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton")) 
         {
-                gage -= 10f;
+                Debug.Log("Y");
+                gage -= 10f*Time.deltaTime;
         }
+        //else if(gage == 0)
+        //{
+        //    buttonComponent.interactable = false;
+        //}
+        //else if(gage >= 1 )
+        //{
+        //    buttonComponent.interactable = true;
+        //}
 
         if (timeCount % 20 == 0)
         {
-            gage += 2.0f;
+            gage += 2.0f*Time.deltaTime;
         }
 
             slider.value = gage;

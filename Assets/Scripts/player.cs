@@ -27,14 +27,14 @@ public class player : MonoBehaviour
     Enemy AttackEnemy;
     public int hp = 3;
 
-   // private Slider playerHPSlider;
+    // private Slider playerHPSlider;
     public GameObject[] playerIcons;
 
     public int destroyCount = 0;
 
     public bool isMuteki = false;
 
-     public float interval = 0.1f;
+    public float interval = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +47,7 @@ public class player : MonoBehaviour
 
     IEnumerator Blink()
     {
-        for (int i = 0; i< 30; i++)
+        for (int i = 0; i < 30; i++)
         {
             var renderComponent = GetComponent<Renderer>();
             renderComponent.enabled = !renderComponent.enabled;
@@ -56,7 +56,7 @@ public class player : MonoBehaviour
     }
 
 
-  
+
     void Update()
     {
         MoveX = Input.GetAxisRaw("Horizontal") * speed;
@@ -77,16 +77,16 @@ public class player : MonoBehaviour
             transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
         }
 
-        if (Input.GetKey(KeyCode.D)|| InputX >=0.8)
+        if (Input.GetKey(KeyCode.D) || InputX >= 0.8)
         {
             Debug.Log("D");
             zRotate = Mathf.Clamp(zRotate - adRotate * Time.frameCount, -40, 40);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
-        if (Input.GetKey(KeyCode.A)||InputX <=-0.8)
+        if (Input.GetKey(KeyCode.A) || InputX <= -0.8)
         {
             Debug.Log("A");
-            zRotate = Mathf.Clamp(zRotate + adRotate * Time.frameCount , -40, 40);
+            zRotate = Mathf.Clamp(zRotate + adRotate * Time.frameCount, -40, 40);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
     }
@@ -118,65 +118,58 @@ public class player : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-            if (col.gameObject.CompareTag("Enemy") && isMuteki == false)
-            {
-
-                Invoke("Retry", 0.01f);
-
-
-                if (col.gameObject.tag == "Enemy")
-                {
-                    AttackEnemy = col.gameObject.GetComponent<Enemy>();
-                    // ヒットポイントを減らす
-                    hp = hp - AttackEnemy.power;
-
-                    Destroy(col.gameObject);
-
-                    if (hp == 2)
-                    {
-
-                        Debug.Log("敵からダメージを喰らっている");
-                        destroyCount += 1;
-                    StartCoroutine("Blink");
-                    UpdatePlayerIcons();
-
-                    }
-
-                    if (hp == 1)
-                    {
-                        Debug.Log("敵からダメージを喰らっている2");
-                        destroyCount += 1;
-                    StartCoroutine("Blink");
-                    UpdatePlayerIcons();
-                    }
-
-                    if (hp <= 0)
-                    {
-                        Debug.Log("敵からダメージを喰らっている3");
-                        //HPが0となったら破壊された回数を1増やす
-                        destroyCount += 1;
-
-                        // 命令ブロック（メソッド）を呼び出す。
-                        UpdatePlayerIcons();
-
-                        Destroy(gameObject);
-                        Debug.Log("敵に当たり死亡");
-
-                    SceneManager.LoadScene("GameOver");
-                }
-
-
-                }
-
-
-            }
-
-        if (col.gameObject.CompareTag("EnemyBullet") && isMuteki == false)
+        if (col.gameObject.CompareTag("Enemy") && isMuteki == false)
         {
-
 
             Invoke("Retry", 0.01f);
 
+
+            if (col.gameObject.tag == "Enemy")
+            {
+                AttackEnemy = col.gameObject.GetComponent<Enemy>();
+                // ヒットポイントを減らす
+                hp = hp - AttackEnemy.power;
+
+                Destroy(col.gameObject);
+
+                if (hp == 2)
+                {
+
+                    Debug.Log("敵からダメージを喰らっている");
+                    destroyCount += 1;
+                    StartCoroutine("Blink");
+                    UpdatePlayerIcons();
+
+                }
+
+                if (hp == 1)
+                {
+                    Debug.Log("敵からダメージを喰らっている2");
+                    destroyCount += 1;
+                    StartCoroutine("Blink");
+                    UpdatePlayerIcons();
+                }
+
+                if (hp <= 0)
+                {
+                    Debug.Log("敵からダメージを喰らっている3");
+                    //HPが0となったら破壊された回数を1増やす
+                    destroyCount += 1;
+
+                    // 命令ブロック（メソッド）を呼び出す。
+                    UpdatePlayerIcons();
+
+                    Destroy(gameObject);
+                    Debug.Log("敵に当たり死亡");
+
+                    SceneManager.LoadScene("GameOver");
+                }
+            }
+        }
+
+        if (col.gameObject.CompareTag("EnemyBullet") && isMuteki == false)
+        {
+            Invoke("Retry", 0.01f);
 
             if (col.gameObject.tag == "EnemyBullet")
             {
@@ -231,16 +224,16 @@ public class player : MonoBehaviour
     {
         for (int i = 0; i < playerIcons.Length; i++)
         {
-          
-                if (destroyCount <= i)
-                {
-                    playerIcons[i].SetActive(true);
-                }
-                else
-                {
-           
-                    playerIcons[i].SetActive(false);
-                }
+
+            if (destroyCount <= i)
+            {
+                playerIcons[i].SetActive(true);
+            }
+            else
+            {
+
+                playerIcons[i].SetActive(false);
+            }
         }
     }
 
