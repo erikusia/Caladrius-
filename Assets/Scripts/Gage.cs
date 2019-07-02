@@ -19,14 +19,14 @@ public class Gage : MonoBehaviour
     void Update()
     {
         timeCount += 1;
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetButton("Xbutton"))
         {
-                gage -= 10f;
+                gage -= 10f * Time.deltaTime;
         }
 
         if (timeCount % 20 == 0)
         {
-            gage += 2.0f;
+            gage += 2.0f * Time.deltaTime;
         }
 
             slider.value = gage;
