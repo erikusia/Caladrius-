@@ -9,6 +9,7 @@ public class Gage : MonoBehaviour
     float gage = 100;
     private int timeCount;
 
+
     // Start is called before the first frame update
     void Start()
     {

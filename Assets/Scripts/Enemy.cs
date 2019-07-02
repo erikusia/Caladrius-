@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public int hp = 1;
 
 
+
     Bullet playerBullet;
 
     // Start is called before the first frame update
