@@ -11,15 +11,21 @@ public class BossEnemy : MonoBehaviour
     public float TimeCount = 0;
 
     Bullet playerBullet;
-    public float maxHealth;
+    Slider HPSlider;
+    float HPBer = 100;
+
+    public int power = 1;
+
+    public int hp = 1;
+
     // RectTranform コンポーネントを格納する変数
     public RectTransform healthBar;
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        HPSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
 
-  
         character = GetComponent<Character>();
         character.Move(transform.forward * -1);
         state = 0;
@@ -113,7 +119,7 @@ public class BossEnemy : MonoBehaviour
         
     }
 
-    //void OnTriggerEnter(Collider col)
+    //void OnCollisionEnter(Collision col)
     //{
     //    if (col.gameObject.tag == "PlayerBullet")
     //    {
@@ -130,7 +136,7 @@ public class BossEnemy : MonoBehaviour
     //        }
     //        // RectTranform コンポーネントのサイズを体力値に合わせて変更
     //        //（X値に currentHealth を代入、Y値は RectTranform コンポーネントのY値を代入）
-    //        healthBar.sizeDelta = new Vector2(maxHealth, healthBar.sizeDelta.y);
+    //        healthBar.sizeDelta = new Vector3(maxHealth, healthBar.sizeDelta.y);
 
 
     //    }
@@ -141,5 +147,29 @@ public class BossEnemy : MonoBehaviour
     void Update()
     {
         //transform.Rotate(Vector3.forward * rotspeed);
+    }
+
+
+    void OnTriggerEnter(Collider col)
+    {
+
+        if (col.gameObject.tag == "PlayerBullet")
+        {
+            playerBullet = col.gameObject.GetComponent<Bullet>();
+
+            Debug.Log("敵Hit");
+            // ヒットポイントを減らす
+            hp = hp - playerBullet.power;
+
+            HPBer -= 0.1f;
+
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+                Debug.Log("敵死亡");
+            }
+            HPSlider.value = HPBer;
+        }
+        
     }
 }

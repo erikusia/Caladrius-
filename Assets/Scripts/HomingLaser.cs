@@ -17,6 +17,8 @@ public class HomingLaser : MonoBehaviour
     // 着弾時間
     float period = 2f;
 
+    public float Power = 10.0f;
+
     // Start is called before the first frame update
     void Start()
     {

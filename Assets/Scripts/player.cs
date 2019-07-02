@@ -27,7 +27,6 @@ public class player : MonoBehaviour
     Enemy AttackEnemy;
     public int hp = 3;
 
-   // private Slider playerHPSlider;
     public GameObject[] playerIcons;
 
     public int destroyCount = 0;
@@ -42,7 +41,6 @@ public class player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         character = GetComponent<Character>();
         StartCoroutine(PlayerShot());
-        //StartCoroutine("Blink");
     }
 
     IEnumerator Blink()
@@ -121,7 +119,7 @@ public class player : MonoBehaviour
             if (col.gameObject.CompareTag("Enemy") && isMuteki == false)
             {
 
-                Invoke("Retry", 0.01f);
+                Invoke("Retry", 0.001f);
 
 
                 if (col.gameObject.tag == "Enemy")
@@ -175,7 +173,7 @@ public class player : MonoBehaviour
         {
 
 
-            Invoke("Retry", 0.01f);
+            Invoke("Retry", 0.001f);
 
 
             if (col.gameObject.tag == "EnemyBullet")
