@@ -31,7 +31,7 @@ public class EnemyManager : MonoBehaviour
             if (time >= spowsec)
             {
                 Instantiate(info[infoindex].pfbEnemy,
-                    info[infoindex].pos,Quaternion.identity);
+                    info[infoindex].pos,info[infoindex].pfbEnemy.transform.rotation);
                 infoindex += 1;
                 if (infoindex < info.Length)
                 {
