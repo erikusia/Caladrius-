@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &480865653490776602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 480865653490776603}
+  - component: {fileID: 480865653490776604}
+  m_Layer: 0
+  m_Name: spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &480865653490776603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480865653490776602}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &480865653490776604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480865653490776602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f78c6183c3727743a250deafdba3644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info:
+  - sec: 1
+    pos: {x: -7, y: 0, z: 11}
+    pfbEnemy: {fileID: 2623618608310554008, guid: c22040160031c2044b1924040b455abe,
+      type: 3}
+    posStop: {x: 0, y: 0, z: 0}
+  - sec: 1.3
+    pos: {x: -9, y: 0, z: 11}
+    pfbEnemy: {fileID: 2623618608310554008, guid: c22040160031c2044b1924040b455abe,
+      type: 3}
+    posStop: {x: 0, y: 0, z: 0}
+  - sec: 1.7
+    pos: {x: -11, y: 0, z: 11}
+    pfbEnemy: {fileID: 2623618608310554008, guid: c22040160031c2044b1924040b455abe,
+      type: 3}
+    posStop: {x: 0, y: 0, z: 0}
+  - sec: 3
+    pos: {x: 7, y: 0, z: 11}
+    pfbEnemy: {fileID: 2623618608310554008, guid: c22040160031c2044b1924040b455abe,
+      type: 3}
+    posStop: {x: 0, y: 0, z: 0}
+  - sec: 3.5
+    pos: {x: 9, y: 0, z: 11}
+    pfbEnemy: {fileID: 2623618608310554008, guid: c22040160031c2044b1924040b455abe,
+      type: 3}
+    posStop: {x: 0, y: 0, z: 0}
+  - sec: 4
+    pos: {x: 11, y: 0, z: 11}
+    pfbEnemy: {fileID: 2623618608310554008, guid: c22040160031c2044b1924040b455abe,
+      type: 3}
+    posStop: {x: 0, y: 0, z: 0}
+  - sec: 6
+    pos: {x: 0, y: 0, z: 11}
+    pfbEnemy: {fileID: 4642303687590672817, guid: da2b99eee380c8648a26ca98d0be5b72,
+      type: 3}
+    posStop: {x: 0, y: 0, z: 0}
+  - sec: 9
+    pos: {x: -10, y: 0, z: 11}
+    pfbEnemy: {fileID: 6289676397530938912, guid: 5c3ab1752cf87cb4ba08fa081bd9596a,
+      type: 3}
+    posStop: {x: 0, y: 0, z: 0}
+  - sec: 10
+    pos: {x: 10, y: 0, z: 11}
+    pfbEnemy: {fileID: 6289676397530938912, guid: 5c3ab1752cf87cb4ba08fa081bd9596a,
+      type: 3}
+    posStop: {x: 0, y: 0, z: 0}
+  infoindex: 0
