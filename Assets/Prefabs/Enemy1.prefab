@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2624735699730411221}
   m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,9 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09998243f2c3c4647bd565196a024daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 1
-  shotinterval: 1
+  movespeed: 7
+  shotinterval: 2
+  bulletP: {fileID: 0}
   bullet: {fileID: 6959929673756167929, guid: 61848385a915ab145980f7f5b827e959, type: 3}
+  burstbullet: {fileID: 0}
+  circrebullets: {fileID: 0}
 --- !u!114 &2624735699730411221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotspeed: 7
+  power: 1
+  hp: 1
 --- !u!1 &2624735699381714571
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,4 +187,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b47f455dcb293542900bd98e64435d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8208230015618290879, guid: 36fea44e211c5bb468668ca79f4c017f, type: 3}
