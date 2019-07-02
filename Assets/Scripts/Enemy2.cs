@@ -5,13 +5,16 @@ using UnityEngine;
 public class Enemy2 : MonoBehaviour
 {
     Character character;
+    public Vector3 vector3;
+    float dist;
+    EnemyManager manager;
     // Start is called before the first frame update
     IEnumerator Start()
     {
         character = GetComponent<Character>();
-        //character.Move(Vector3.forward * -1);
-        StartMove();
-
+        manager = GetComponent<EnemyManager>();
+        character.Move(Vector3.forward * -1);
+       
         while (true)
         {
             yield return new WaitForSeconds(0.05f);
@@ -29,11 +32,6 @@ public class Enemy2 : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    void StartMove()
     {
         
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,13 +14,11 @@ public class EnemyManager : MonoBehaviour
 
     float spowsec;
     float time;
-    float ntime;
     
     // Start is called before the first frame update
     void Start()
     {
         spowsec = info[0].sec;
-        ntime=info[0].sec;
     }
 
     // Update is called once per frame
@@ -29,20 +28,29 @@ public class EnemyManager : MonoBehaviour
         {
             time += Time.deltaTime;
             spowsec -= Time.deltaTime;
-            if (time >= ntime)
+            if (time >= spowsec)
             {
-                Instantiate(info[infoindex].pfbEnemy);
+                Instantiate(info[infoindex].pfbEnemy,
+                    info[infoindex].pos,Quaternion.identity);
                 infoindex += 1;
                 if (infoindex < info.Length)
                 {
-                    ntime = info[infoindex].sec;
+                    spowsec = info[infoindex].sec;
                 }
-                else
+                else if(infoindex>info.Length)
                 {
-                    this.enabled = false;
+                    enabled = false;
                 }
             }
         }
     }
+
+    //private void Awake()
+    //{
+    //    float x = transform.position.z-;
+    //    var a = x - Mathf.Cos(x);
+    //    transform.position = new Vector3(100, 100, 0) + new Vector3(a, 0, x);
+    //}
+
 
 }

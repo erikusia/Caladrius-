@@ -17,4 +17,9 @@ public class Character : MonoBehaviour
     {
         GetComponent<Rigidbody>().velocity = direcion * movespeed;
     }
+
+    public void Move2(Vector3 vector3)
+    {
+        GetComponent<GameObject>().transform.Translate(vector3);
+    }
 }
