@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: c05055d72bfc9cf409c8e81a776b4ad7
   - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
-    guid: 409990fef94d39746af837bb4842c829
+    path: Assets/Scenes/Hit.unity
+    guid: 1daa413a6f96db14d943fd7506e7a0b7
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: b34cafc3392a66f4bbb2255c29fe5dc7
+  - enabled: 0
+    path: Assets/Scenes/GamePlay.unity
+    guid: 409990fef94d39746af837bb4842c829
+  - enabled: 0
+    path: Assets/Scenes/kaede.unity
+    guid: 0de1d87c1146a6844af50f2077752cc5
+  - enabled: 0
+    path: Assets/Scenes/iwatani.unity
+    guid: 76c882c7fae58bd4e8472ad0ae018d8a
   m_configObjects: {}
