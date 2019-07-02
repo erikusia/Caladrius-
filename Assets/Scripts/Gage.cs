@@ -10,6 +10,7 @@ public class Gage : MonoBehaviour
     private int timeCount;
     Button buttonComponent;
 
+
     // Start is called before the first frame update
     void Start()
     {

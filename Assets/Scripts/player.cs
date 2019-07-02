@@ -27,7 +27,10 @@ public class player : MonoBehaviour
     Enemy AttackEnemy;
     public int hp = 3;
 
+<<<<<<< HEAD
     // private Slider playerHPSlider;
+=======
+>>>>>>> da678108d6b0c669a808e18b721644456e1d11c1
     public GameObject[] playerIcons;
 
     public int destroyCount = 0;
@@ -42,7 +45,6 @@ public class player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         character = GetComponent<Character>();
         StartCoroutine(PlayerShot());
-        //StartCoroutine("Blink");
     }
 
     IEnumerator Blink()
@@ -121,7 +123,11 @@ public class player : MonoBehaviour
         if (col.gameObject.CompareTag("Enemy") && isMuteki == false)
         {
 
+<<<<<<< HEAD
             Invoke("Retry", 0.01f);
+=======
+                Invoke("Retry", 0.001f);
+>>>>>>> da678108d6b0c669a808e18b721644456e1d11c1
 
 
             if (col.gameObject.tag == "Enemy")
@@ -169,7 +175,13 @@ public class player : MonoBehaviour
 
         if (col.gameObject.CompareTag("EnemyBullet") && isMuteki == false)
         {
+<<<<<<< HEAD
             Invoke("Retry", 0.01f);
+=======
+
+
+            Invoke("Retry", 0.001f);
+>>>>>>> da678108d6b0c669a808e18b721644456e1d11c1
 
             if (col.gameObject.tag == "EnemyBullet")
             {
