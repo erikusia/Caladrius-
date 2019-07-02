@@ -82,6 +82,8 @@
     <Compile Include="Assets\Scripts\Scroll.cs" />
     <Compile Include="Assets\Scripts\Test.cs" />
     <Compile Include="Assets\Scripts\Test2.cs" />
+    <Compile Include="Assets\Scripts\Test3.cs" />
+    <Compile Include="Assets\Scripts\test4.cs" />
     <Compile Include="Assets\Scripts\Zgage.cs" />
     <Compile Include="Assets\StarSparrow\Readme\Readme Files\Scripts\Readme.cs" />
     <Reference Include="Unity.Timeline.Editor">

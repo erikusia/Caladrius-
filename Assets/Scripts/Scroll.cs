@@ -26,12 +26,11 @@ public class Scroll : MonoBehaviour
         //positionを設定
         nowtrans.position = nowpos;
 
-        Debug.Log(nowpos);
-
         if (nowpos.z <= -120)
         {
             this.enabled = false;
         }
 
+        Debug.Log(Time.time);
     }
 }
