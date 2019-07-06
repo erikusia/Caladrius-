@@ -23,7 +23,7 @@ public class BossEnemy : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        HPSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
+        //HPSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
 
         character = GetComponent<Character>();
         character.Move(transform.forward * -1);
