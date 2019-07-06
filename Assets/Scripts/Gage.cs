@@ -13,23 +13,26 @@ public class Gage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider = GameObject.Find("ZSlider").GetComponent<Slider>();    
+        slider = GameObject.Find("ZSlider").GetComponent<Slider>();
+        slider.maxValue = 100;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         timeCount += 1;
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R)||Input.GetButton("Xbutton"))
         {
-                gage -= 10f;
+            gage -= 0.3f;
+            Debug.Log(gage);
+
         }
 
         if (timeCount % 20 == 0)
         {
             gage += 2.0f;
         }
-
-            slider.value = gage;
+        slider.value = gage;
     }
 }

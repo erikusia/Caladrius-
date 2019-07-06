@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -12,14 +13,12 @@ public class BossEnemy : MonoBehaviour
 
     Bullet playerBullet;
     Slider HPSlider;
-    float HPBer = 100;
+    //float HPber = 100;
 
     public int power = 1;
 
     public int hp = 1;
 
-    // RectTranform コンポーネントを格納する変数
-    public RectTransform healthBar;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -29,13 +28,15 @@ public class BossEnemy : MonoBehaviour
         character = GetComponent<Character>();
         character.Move(transform.forward * -1);
         state = 0;
+        HPSlider.maxValue = hp;
+        HPSlider.value = hp;
         
 
         while (true)
         {
             TimeCount += 1;
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(2f);
             for (int i = 0; i < transform.childCount; i++)
             {
 
@@ -115,8 +116,6 @@ public class BossEnemy : MonoBehaviour
 
             yield return new WaitForSeconds(character.shotinterval);
         }
-
-        
     }
 
     //void OnCollisionEnter(Collision col)
@@ -161,14 +160,13 @@ public class BossEnemy : MonoBehaviour
             // ヒットポイントを減らす
             hp = hp - playerBullet.power;
 
-            HPBer -= 0.1f;
-
             if (hp <= 0)
             {
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
+                SceneManager.LoadScene("GameClear");
             }
-            HPSlider.value = HPBer;
+            HPSlider.value = hp;
         }
         
     }

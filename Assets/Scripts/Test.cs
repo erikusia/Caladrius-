@@ -7,6 +7,7 @@ public class Test : MonoBehaviour
     public Vector3 startpos;
     public Vector3 endpos;
     public float speed;
+    float time;
     float distance;
     void Start()
     {
@@ -15,7 +16,9 @@ public class Test : MonoBehaviour
 
     void Update()
     {
-        float nowpos = (Time.time * speed) / distance;
+        time += Time.deltaTime;
+        Debug.Log(time);
+        float nowpos = (time * speed) / distance;
         transform.position = Vector3.Lerp(startpos, endpos, nowpos);
     }
 }
