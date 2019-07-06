@@ -24,14 +24,14 @@ public class Gage2 : MonoBehaviour
         {
             gage -= 10f * Time.deltaTime;
 
-            gage = Mathf.Max(gage - 10f * timeCount.deltaTime, 0);
+            gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
         }
 
-        if (timeCount % 30 == 0)
+        if (timeCount % 10 == 0)
         {
             gage += 2.0f * Time.deltaTime;
 
-            gage = Mathf.Min(gage + 2.0f * Time.detaTime, 100);
+            gage = Mathf.Min(gage + 2.0f * Time.deltaTime, 100);
         }
         
         Debug.Log(gage);

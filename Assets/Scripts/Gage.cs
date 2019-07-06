@@ -6,14 +6,13 @@ using UnityEngine.UI;
 public class Gage : MonoBehaviour
 {
     Slider slider;
-    [Range(0,100)]
-    public float gage;
+    float gage = 100;
     private int timeCount;
 
     // Start is called before the first frame update
     void Start()
     {
-        slider = GameObject.Find("ZSlider").GetComponent<Slider>(); 
+        slider = GameObject.Find("ZSlider").GetComponent<Slider>();
     }
 
     // Update is called once per frame
@@ -22,16 +21,17 @@ public class Gage : MonoBehaviour
         timeCount += 1;
 
 
-            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
-            {
-                gage -= 10f * Time.deltaTime;
-            }
+        if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
+        {
+            gage -= 10f * Time.deltaTime;
+        }
 
-            if (timeCount % 20 == 0)
-            {
-                gage += 2.0f * Time.deltaTime;
-            }
-        
-            slider.value = gage;
+        if (timeCount % 20 == 0)
+        {
+            gage += 2.0f * Time.deltaTime;
+        }
+
+        gage = Mathf.Clamp(gage, 0, 100);
+        slider.value = gage;
     }
 }

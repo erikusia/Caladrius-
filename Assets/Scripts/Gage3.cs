@@ -22,13 +22,16 @@ public class Gage3 : MonoBehaviour
         if (Input.GetKey(KeyCode.E) || Input.GetButton("Bbutton"))
         {
             gage -= 10f * Time.deltaTime;
+            gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
         }
 
-        if (timeCount % 20 == 0)
+        if (timeCount % 10 == 0)
         {
-            gage += 1.0f * Time.deltaTime;
+            gage += 2.0f * Time.deltaTime;
+            gage = Mathf.Min(gage + 2.0f * Time.deltaTime, 100);
         }
 
+        gage = Mathf.Clamp(gage, 0, 100);
         slider.value = gage;
     }
 }
