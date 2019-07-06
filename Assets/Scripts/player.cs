@@ -27,10 +27,7 @@ public class player : MonoBehaviour
     Enemy AttackEnemy;
     public int hp = 3;
 
-<<<<<<< HEAD
-    // private Slider playerHPSlider;
-=======
->>>>>>> da678108d6b0c669a808e18b721644456e1d11c1
+
     public GameObject[] playerIcons;
 
     public int destroyCount = 0;
@@ -121,14 +118,8 @@ public class player : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Enemy") && isMuteki == false)
-        {
 
-<<<<<<< HEAD
             Invoke("Retry", 0.01f);
-=======
-                Invoke("Retry", 0.001f);
->>>>>>> da678108d6b0c669a808e18b721644456e1d11c1
-
 
             if (col.gameObject.tag == "Enemy")
             {
@@ -173,65 +164,7 @@ public class player : MonoBehaviour
             }
         }
 
-        if (col.gameObject.CompareTag("EnemyBullet") && isMuteki == false)
-        {
-<<<<<<< HEAD
-            Invoke("Retry", 0.01f);
-=======
-
-
-            Invoke("Retry", 0.001f);
->>>>>>> da678108d6b0c669a808e18b721644456e1d11c1
-
-            if (col.gameObject.tag == "EnemyBullet")
-            {
-                enemyBullet = col.gameObject.GetComponent<Bullet>();
-                // ヒットポイントを減らす
-                hp = hp - enemyBullet.power;
-
-                Destroy(col.gameObject);
-
-                if (hp == 2)
-                {
-
-                    Debug.Log("ダメージを喰らっている");
-                    destroyCount += 1;
-                    StartCoroutine("Blink");
-                    UpdatePlayerIcons();
-
-                }
-
-                if (hp == 1)
-                {
-                    Debug.Log("ダメージを喰らっている2");
-                    destroyCount += 1;
-                    StartCoroutine("Blink");
-                    UpdatePlayerIcons();
-                }
-
-                if (hp <= 0)
-                {
-                    Debug.Log("ダメージを喰らっている3");
-                    //HPが0となったら破壊された回数を1増やす
-                    destroyCount += 1;
-
-                    // 命令ブロック（メソッド）を呼び出す。
-                    UpdatePlayerIcons();
-
-                    Destroy(gameObject);
-                    Debug.Log("死亡");
-
-                    SceneManager.LoadScene("GameOver");
-                }
-
-
-            }
-
-        }
-
-
-    }
-
+       
     void UpdatePlayerIcons()
     {
         for (int i = 0; i < playerIcons.Length; i++)

@@ -19,7 +19,7 @@ public class Gage3 : MonoBehaviour
     void Update()
     {
         timeCount += 1;
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetButton("Bbutton"))
+        if (Input.GetKey(KeyCode.E) || Input.GetButton("Bbutton"))
         {
             gage -= 10f * Time.deltaTime;
         }

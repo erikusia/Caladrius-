@@ -18,17 +18,25 @@ public class Gage2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         timeCount += 1;
-        if (Input.GetKeyDown(KeyCode.F)|| Input.GetButton("Ybutton"))
+        if (Input.GetKey(KeyCode.F)|| Input.GetButton("Ybutton"))
         {
             gage -= 10f * Time.deltaTime;
+
+            gage = Mathf.Max(gage - 10f * timeCount.deltaTime, 0);
         }
 
         if (timeCount % 30 == 0)
         {
             gage += 2.0f * Time.deltaTime;
-        }
 
+            gage = Mathf.Min(gage + 2.0f * Time.detaTime, 100);
+        }
+        
+        Debug.Log(gage);
+
+        gage = Mathf.Clamp(gage, 0, 100);
         slider.value = gage;
     }
 }
