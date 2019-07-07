@@ -572,6 +572,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotspeed: 0
   TimeCount: 0
+  power: 1
+  hp: 1
+  healthBar: {fileID: 0}
 --- !u!54 &1012230722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -891,6 +894,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 861907109225657090, guid: cf0cc653d79aed84faadcc01f4d3417a,
+        type: 3}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf0cc653d79aed84faadcc01f4d3417a, type: 3}
 --- !u!1001 &4625920037203894100
@@ -974,6 +982,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8206650041496227463, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8208230015618290879, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1043,11 +1056,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8206650041496227463, guid: 36fea44e211c5bb468668ca79f4c017f,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8207455249215581600, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
