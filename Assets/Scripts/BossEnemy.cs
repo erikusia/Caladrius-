@@ -28,7 +28,7 @@ public class BossEnemy : MonoBehaviour
         character = GetComponent<Character>();
         character.Move(transform.forward * -1);
         state = 0;
-        HPSlider.maxValue = hp;
+  
         HPSlider.value = hp;
         
 

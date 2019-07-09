@@ -8,10 +8,12 @@ public class Gage : MonoBehaviour
     Slider slider;
     float gage = 100;
     private int timeCount;
+    Character character;
 
     // Start is called before the first frame update
     void Start()
     {
+        character = GetComponent<Character>();
         slider = GameObject.Find("ZSlider").GetComponent<Slider>();
     }
 
@@ -21,8 +23,10 @@ public class Gage : MonoBehaviour
         timeCount += 1;
 
 
-        if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
+        if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton")
+            && slider.value>=0)
         {
+            //Debug.Log("Xbutton");
             gage -= 10f * Time.deltaTime;
         }
 
