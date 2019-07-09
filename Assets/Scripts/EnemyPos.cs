@@ -29,6 +29,7 @@ public class EnemyPos : MonoBehaviour
     {
         while (true)
         {
+
             nearDis = 0;
             time+= Time.deltaTime*speed;
             targets = GameObject.FindGameObjectsWithTag("Enemy");
@@ -43,13 +44,15 @@ public class EnemyPos : MonoBehaviour
                     nearDis = targetPos;
                     nearTarget = target;
                 }
-                Debug.Log(nearTarget);
+                //Debug.Log(nearTarget);
 
             }
             //現在の回転情報と、ターゲット方向の回転情報を補完する
             if (nearTarget != null)
             {
+     
                 Quaternion quaternion = Quaternion.LookRotation(nearTarget.transform.position - transform.position);
+                yield return new WaitForSeconds(0.05f);
                 this.transform.rotation = Quaternion.Slerp(transform.rotation, quaternion, time);
             }
             else 
@@ -57,7 +60,15 @@ public class EnemyPos : MonoBehaviour
                 break;
             }
 
-            yield return null;
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
         }
     }
 }

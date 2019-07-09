@@ -10,32 +10,60 @@ public class Gage : MonoBehaviour
     private int timeCount;
     Character character;
 
+    [SerializeField]
+    float shotinterval;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         character = GetComponent<Character>();
         slider = GameObject.Find("ZSlider").GetComponent<Slider>();
+        StartCoroutine(PlayerShot());
     }
 
     // Update is called once per frame
     void Update()
     {
         timeCount += 1;
+    }
 
-
-        if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton")
-            && slider.value>=0)
+    IEnumerator PlayerShot()
+    {
+        while (true)
         {
-            //Debug.Log("Xbutton");
-            gage -= 10f * Time.deltaTime;
-        }
+            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
+            {
+                if (gage > 0)
+                {
+                    for (int i = 3; i <= 4; i++)
+                    {
+                        Transform shotPosition = transform.GetChild(i);
+                        Debug.Log(i);
+                        Debug.Log("特殊弾1が出てます");
+                        //shotPositionの位置方向で
+                        character.specialShot(shotPosition);
+                    }
+                    gage -= 100f;
+                    Debug.Log(gage);
+                    yield return new WaitForSeconds(shotinterval);
+                }
+                else if(gage<=0)
+                {
+                    Debug.Log("撃てません！");
+                }
 
-        if (timeCount % 20 == 0)
-        {
-            gage += 2.0f * Time.deltaTime;
-        }
+            }
 
-        gage = Mathf.Clamp(gage, 0, 100);
-        slider.value = gage;
+            if (timeCount % 20 == 0)
+            {
+                gage += 2.0f * Time.deltaTime;
+            }
+
+            gage = Mathf.Clamp(gage, 0, 100);
+            slider.value = gage;
+
+            yield return null;
+        }
     }
 }
