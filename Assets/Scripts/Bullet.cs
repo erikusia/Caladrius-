@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
 
     public int power = 1;
 
+    PlayerShield playerShield;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,20 @@ public class Bullet : MonoBehaviour
 
         //Rect rc = new Rect(Vector2.zero, new Vector2(1000, 5000));
         //rc.Contains()
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+
+       
+
+        if (col.gameObject.tag == "PlayerShield")
+        {
+            playerShield = col.gameObject.GetComponent<PlayerShield>();
+            Destroy(gameObject);
+            Debug.Log("敵の弾死亡");
+        }
+
     }
 
 }

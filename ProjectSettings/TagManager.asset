@@ -9,6 +9,7 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - HPSlider
+  - PlayerShield
   layers:
   - Default
   - TransparentFX

@@ -117,16 +117,14 @@ public class player : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("Enemy") && isMuteki == false)
-
-            Invoke("Retry", 0.01f);
-
-            if (col.gameObject.tag == "Enemy")
+        if (isMuteki == false)
+        {
+            if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "EnemyBullet")
             {
                 AttackEnemy = col.gameObject.GetComponent<Enemy>();
                 // ヒットポイントを減らす
                 hp = hp - AttackEnemy.power;
-
+                Invoke("Retry", 0.01f);
                 Destroy(col.gameObject);
 
                 if (hp == 2)
@@ -135,6 +133,7 @@ public class player : MonoBehaviour
                     Debug.Log("敵からダメージを喰らっている");
                     destroyCount += 1;
                     StartCoroutine("Blink");
+                    Invoke("Retry", 0.01f);
                     UpdatePlayerIcons();
 
                 }
@@ -144,6 +143,7 @@ public class player : MonoBehaviour
                     Debug.Log("敵からダメージを喰らっている2");
                     destroyCount += 1;
                     StartCoroutine("Blink");
+
                     UpdatePlayerIcons();
                 }
 
@@ -163,6 +163,7 @@ public class player : MonoBehaviour
                 }
             }
         }
+    }
 
        
     void UpdatePlayerIcons()

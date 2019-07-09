@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
 
     Bullet playerBullet;
 
+    PlayerShield playerShield;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -58,6 +60,13 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
             }
+        }
+
+        if (col.gameObject.tag == "PlayerShield")
+        {
+            playerShield = col.gameObject.GetComponent<PlayerShield>();
+            Destroy(gameObject);
+            Debug.Log("敵死亡");
         }
 
     }
