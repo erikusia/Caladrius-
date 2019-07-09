@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1119023e7673eb9478d89cd83943d633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSpeed: 5
+  BulletSpeed: 10
   power: 1
 --- !u!136 &5687801178799197123
 CapsuleCollider:

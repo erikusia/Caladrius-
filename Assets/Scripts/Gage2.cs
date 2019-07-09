@@ -34,7 +34,7 @@ public class Gage2 : MonoBehaviour
             gage = Mathf.Min(gage + 2.0f * Time.deltaTime, 100);
         }
         
-        Debug.Log(gage);
+        //Debug.Log(gage);
 
         gage = Mathf.Clamp(gage, 0, 100);
         slider.value = gage;

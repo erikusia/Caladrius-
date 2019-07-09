@@ -100,7 +100,7 @@ public class player : MonoBehaviour
         {
             if (Input.GetMouseButton(0) || Input.GetButton("Abutton"))
             {
-                for (int i = 0; i < transform.childCount; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     Transform shotPosition = transform.GetChild(i);
                     Debug.Log("出てます");
@@ -117,12 +117,13 @@ public class player : MonoBehaviour
     {
         if (isMuteki == false)
         {
-            if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "EnemyBullet")
+
+            if (col.gameObject.CompareTag("Enemy"))
             {
+                Invoke("Retry", 0.01f);
                 AttackEnemy = col.gameObject.GetComponent<Enemy>();
                 // ヒットポイントを減らす
                 hp = hp - AttackEnemy.power;
-                Invoke("Retry", 0.01f);
                 Destroy(col.gameObject);
 
                 if (hp == 2)
@@ -131,7 +132,6 @@ public class player : MonoBehaviour
                     Debug.Log("敵からダメージを喰らっている");
                     destroyCount += 1;
                     StartCoroutine("Blink");
-                    Invoke("Retry", 0.01f);
                     UpdatePlayerIcons();
 
                 }
@@ -141,7 +141,6 @@ public class player : MonoBehaviour
                     Debug.Log("敵からダメージを喰らっている2");
                     destroyCount += 1;
                     StartCoroutine("Blink");
-
                     UpdatePlayerIcons();
                 }
 
@@ -160,7 +159,49 @@ public class player : MonoBehaviour
                     SceneManager.LoadScene("GameOver");
                 }
             }
-        }
+
+            else if (col.gameObject.CompareTag("EnemyBullet"))
+            {
+                Invoke("Retry", 0.01f);
+                enemyBullet = col.gameObject.GetComponent<Bullet>();
+                // ヒットポイントを減らす
+                hp = hp - enemyBullet.power;
+                Destroy(col.gameObject);
+
+                if (hp == 2)
+                {
+
+                    Debug.Log("敵からダメージを喰らっている");
+                    destroyCount += 1;
+                    StartCoroutine("Blink");
+                    UpdatePlayerIcons();
+
+                }
+
+                if (hp == 1)
+                {
+                    Debug.Log("敵からダメージを喰らっている2");
+                    destroyCount += 1;
+                    StartCoroutine("Blink");
+                    UpdatePlayerIcons();
+                }
+
+                if (hp <= 0)
+                {
+                    Debug.Log("敵からダメージを喰らっている3");
+                    //HPが0となったら破壊された回数を1増やす
+                    destroyCount += 1;
+
+                    // 命令ブロック（メソッド）を呼び出す。
+                    UpdatePlayerIcons();
+
+                    Destroy(gameObject);
+                    Debug.Log("敵に当たり死亡");
+
+                    SceneManager.LoadScene("GameOver");
+                }
+            }
+        }    
     }
 
        
