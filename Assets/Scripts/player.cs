@@ -54,8 +54,6 @@ public class player : MonoBehaviour
         }
     }
 
-
-
     void Update()
     {
         MoveX = Input.GetAxisRaw("Horizontal") * speed;
