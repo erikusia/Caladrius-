@@ -10,60 +10,59 @@ public class Gage : MonoBehaviour
     private int timeCount;
     Character character;
 
-    [SerializeField]
-    float shotinterval;
-    
+    private Quaternion start;
+    private Quaternion finish;
+    private float t;
+
+    public AudioClip sound1;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        character = GetComponent<Character>();
         slider = GameObject.Find("ZSlider").GetComponent<Slider>();
-        StartCoroutine(PlayerShot());
+        character = GetComponent<Character>();
+        start = Quaternion.Euler(0, 0, 20);
+        finish = Quaternion.Euler(0, 0, -20);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         timeCount += 1;
-    }
 
-    IEnumerator PlayerShot()
-    {
-        while (true)
+        if (gage >= 0)
         {
-            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
+            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton") || gage )
             {
-                if (gage > 0)
+                gage -= 10f;
+                gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
+
+                if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
                 {
-                    for (int i = 3; i <= 4; i++)
+
+                    Transform shotposP0 = transform.GetChild(5);
+
+                    if(t<0.01f)
                     {
-                        Transform shotPosition = transform.GetChild(i);
-                        Debug.Log(i);
-                        Debug.Log("特殊弾1が出てます");
-                        //shotPositionの位置方向で
-                        character.specialShot(shotPosition);
+                        t += 5;
+                        shotposP0.rotation = Quaternion.Slerp(start, finish, t);
                     }
-                    gage -= 100f;
-                    Debug.Log(gage);
-                    yield return new WaitForSeconds(shotinterval);
+
+                    character.Beem(shotposP0);
+                    audioSource.PlayOneShot(sound1);
+                    Debug.Log("ビーム");
                 }
-                else if(gage<=0)
-                {
-                    Debug.Log("撃てません！");
-                }
-
             }
-
-            if (timeCount % 20 == 0)
-            {
-                gage += 2.0f * Time.deltaTime;
-            }
-
-            gage = Mathf.Clamp(gage, 0, 100);
-            slider.value = gage;
-
-            yield return null;
         }
+
+        if (timeCount % 20 == 0)
+        {
+            gage += 2.0f * Time.deltaTime;
+        }
+
+        gage = Mathf.Clamp(gage, 0, 100);
+        slider.value = gage;
     }
 }

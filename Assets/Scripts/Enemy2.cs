@@ -5,15 +5,17 @@ using UnityEngine;
 public class Enemy2 : MonoBehaviour
 {
     Character character;
-    public Vector3 vector3;
     float dist;
-    EnemyManager manager;
+
+    public Vector3 startpos;
+    public Vector3 endpos;
+    public float speed;
+    float time;
+    float distance;
     // Start is called before the first frame update
     IEnumerator Start()
     {
         character = GetComponent<Character>();
-        manager = GetComponent<EnemyManager>();
-        character.Move(Vector3.forward * -1);
        
         while (true)
         {
@@ -33,6 +35,9 @@ public class Enemy2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        time += Time.deltaTime;
+        Debug.Log(time);
+        float nowpos = (time * speed) / distance;
+        transform.position = Vector3.Lerp(startpos, endpos, nowpos);
     }
 }

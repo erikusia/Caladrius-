@@ -9,7 +9,7 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - HPSlider
-  - PlayerShield
+  - Beem
   layers:
   - Default
   - TransparentFX

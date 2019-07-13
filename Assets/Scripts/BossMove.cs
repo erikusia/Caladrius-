@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class BossMove : MonoBehaviour
 {
     public Vector3 startpos;
     public Vector3 endpos;

@@ -36,12 +36,16 @@ public class player : MonoBehaviour
 
     public float interval = 0.1f;
 
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         character = GetComponent<Character>();
         StartCoroutine(PlayerShot());
+        audioSource = GetComponent<AudioSource>();
     }
 
     IEnumerator Blink()
@@ -63,8 +67,18 @@ public class player : MonoBehaviour
 
         timeCount += 1;
 
-        //移動制限
+
         transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
+
+        //transform.position = Vector3.Lerp();
+
+        if (Input.GetMouseButton(0))
+        {
+            Debug.Log("推してます");
+
+            //移動制限
+            transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
+        }
 
         if (Input.GetKey(KeyCode.D) || InputX >= 0.8)
         {
@@ -72,10 +86,15 @@ public class player : MonoBehaviour
             zRotate = Mathf.Clamp(zRotate - adRotate * Time.frameCount, -40, 40);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
-        if (Input.GetKey(KeyCode.A) || InputX <= -0.8)
+        else if (Input.GetKey(KeyCode.A) || InputX <= -0.8)
         {
             Debug.Log("A");
             zRotate = Mathf.Clamp(zRotate + adRotate * Time.frameCount, -40, 40);
+            transform.eulerAngles = new Vector3(0, 0, zRotate);
+        }
+        else
+        {
+            zRotate = Mathf.Clamp(0, 0, 0);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
     }
@@ -100,6 +119,7 @@ public class player : MonoBehaviour
                     character.Shot(shotPosition);
                 }
                 yield return new WaitForSeconds(shotinterval);
+                audioSource.PlayOneShot(sound1);
             }
             yield return null;
         }
