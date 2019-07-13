@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class BeemDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerExit(Collider col)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log(col.gameObject.name);
+        GameObject beem = GameObject.FindWithTag("Beem");
+        if(col.gameObject.tag == "Beem")
+        {;
+            Destroy(col.gameObject);
+        }
     }
 }

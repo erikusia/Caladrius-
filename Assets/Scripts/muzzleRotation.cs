@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class muzzleRotation : MonoBehaviour
 {
-    float max = 40.0f;
-    float min = -40.0f;
-    float max2 = 40.0f;
-    float min2 = -40.0f;
+    float to = 40.0f;
+    float from = -40.0f;
+    float from2 = 40.0f;
+    float to2 = -40.0f;
     int state;
     float time;
 
@@ -24,8 +24,7 @@ public class muzzleRotation : MonoBehaviour
             {
                 case 0:
 
-
-                    float angle = Mathf.LerpAngle(min, max, time);
+                    float angle = Mathf.LerpAngle(from, to, time);
                     transform.eulerAngles = new Vector3(0, angle, 0);
                     if (angle == 40)
                     {
@@ -35,7 +34,7 @@ public class muzzleRotation : MonoBehaviour
                     break;
 
                 case 1:
-                    float angle2 = Mathf.LerpAngle(max2, min, time);
+                    float angle2 = Mathf.LerpAngle(from2, to2, time);
                     transform.eulerAngles = new Vector3(0, angle2, 0);
                     if(angle2 == -40)
                     {
@@ -48,7 +47,7 @@ public class muzzleRotation : MonoBehaviour
         }
         else
         {
-            gameObject.transform.rotation = Quaternion.Euler(0, -20, 0);
+            gameObject.transform.rotation = Quaternion.Euler(0, -40, 0);
         }
 
     }

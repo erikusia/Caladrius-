@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7304621537287188434}
   m_Layer: 0
   m_Name: beem3
-  m_TagString: Untagged
+  m_TagString: Beem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
