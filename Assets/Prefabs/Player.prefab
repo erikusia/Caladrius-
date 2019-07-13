@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 540183897}
   - component: {fileID: 540183898}
   m_Layer: 0
-  m_Name: muzzle (3)
+  m_Name: homing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 1072490850}
   - component: {fileID: 1072490851}
   m_Layer: 0
-  m_Name: muzzle (4)
+  m_Name: homing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b08613f915d912246896836141e8c0ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotinterval: 0.5
 --- !u!114 &8206650041496227459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5423e4c7c2955449bc2543bfe207f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotinterval: 0
 --- !u!114 &8206650041496227457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 8207455247430426368}
   - component: {fileID: 204187350}
   m_Layer: 0
-  m_Name: muzzle
+  m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 8207455248073018715}
   - component: {fileID: 712062860}
   m_Layer: 0
-  m_Name: muzzle (1)
+  m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 8207455249312403820}
   - component: {fileID: 1058892999}
   m_Layer: 0
-  m_Name: muzzle (2)
+  m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
