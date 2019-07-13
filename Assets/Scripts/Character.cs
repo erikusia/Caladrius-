@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
     public GameObject burstbullet;
     public GameObject circrebullets;
     public GameObject SpecialBullet;
+   // public GameObject ShieldBillet;
 
     //プレイヤー
     public void Shot(Transform origin)
@@ -42,6 +43,10 @@ public class Character : MonoBehaviour
         Instantiate(SpecialBullet, origin.position, origin.rotation);
     }
 
+    //public void shieldShot(Transform origin)
+    //{
+    //    Instantiate(ShieldBillet, origin.position, origin.rotation);
+    //}
 
 
     public void Move(Vector3 direcion)

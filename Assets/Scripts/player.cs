@@ -63,16 +63,8 @@ public class player : MonoBehaviour
 
         timeCount += 1;
 
-
+        //移動制限
         transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
-
-        if (Input.GetMouseButton(0))
-        {
-            Debug.Log("推してます");
-
-            //移動制限
-            transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
-        }
 
         if (Input.GetKey(KeyCode.D) || InputX >= 0.8)
         {

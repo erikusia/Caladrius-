@@ -9,44 +9,34 @@ public class Bullet : MonoBehaviour
     public int power = 1;
 
     PlayerShield playerShield;
+    new Rigidbody rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = transform.forward* BulletSpeed;
+        rigidbody = GetComponent<Rigidbody>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (!GetComponent<Renderer>().isVisible)
-        {
-            //Debug.Log("画面外です");
-            //Destroy(gameObject);
-        }
-    }
-
-    private void OnBecameInvisible()
-    {
-        Debug.Log("画面外です");
-
-
-        //Rect rc = new Rect(Vector2.zero, new Vector2(1000, 5000));
-        //rc.Contains()
+        rigidbody.velocity = transform.forward * BulletSpeed;
     }
 
     void OnTriggerEnter(Collider col)
     {
 
-       
-
-        if (col.gameObject.tag == "PlayerShield")
+        if (gameObject.tag != "PlayerBullet")
         {
-            playerShield = col.gameObject.GetComponent<PlayerShield>();
-            Destroy(gameObject);
-            Debug.Log("敵の弾死亡");
+            if (col.gameObject.tag == "PlayerShield")
+            {
+                playerShield = col.gameObject.GetComponent<PlayerShield>();
+                Destroy(gameObject);
+                Debug.Log("敵の弾死亡");
+            }
         }
+
 
     }
 
