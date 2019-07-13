@@ -10,11 +10,11 @@ public class Character : MonoBehaviour
     public GameObject EnemyBullet;
     public GameObject burstbullet;
     public GameObject circrebullets;
-<<<<<<< HEAD
+
     public GameObject beem;
-=======
+
     public GameObject SpecialBullet;
->>>>>>> 51f750cba4c335dec6a9170a2e6067d78f40b929
+
 
     //プレイヤー
     public void Shot(Transform origin)
