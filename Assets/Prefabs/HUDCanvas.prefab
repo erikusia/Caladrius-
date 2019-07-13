@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 136171140}
   m_Layer: 5
   m_Name: Playerlcon (1)
-  m_TagString: Untagged
+  m_TagString: PlayerHp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -239, y: -147}
+  m_AnchoredPosition: {x: -263.2, y: -147}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &136171141
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 382010716}
   m_Layer: 5
   m_Name: Playerlcon (2)
-  m_TagString: Untagged
+  m_TagString: PlayerHp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 1108412042}
   m_Layer: 5
   m_Name: Playerlcon
-  m_TagString: Untagged
+  m_TagString: PlayerHp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,7 +407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -264, y: -147}
+  m_AnchoredPosition: {x: -239.3, y: -147}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1108412043
@@ -555,7 +555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 283, y: 143}
+  m_AnchoredPosition: {x: 293, y: 153}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1569633750

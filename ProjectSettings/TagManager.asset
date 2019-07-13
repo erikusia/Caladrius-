@@ -10,6 +10,7 @@ TagManager:
   - PlayerBullet
   - HPSlider
   - Beem
+  - PlayerHp
   layers:
   - Default
   - TransparentFX

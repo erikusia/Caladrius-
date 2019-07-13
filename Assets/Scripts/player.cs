@@ -28,7 +28,7 @@ public class player : MonoBehaviour
     public int hp = 3;
 
 
-    public GameObject[] playerIcons;
+    GameObject[] playerIcons;
 
     public int destroyCount = 0;
 
@@ -46,6 +46,7 @@ public class player : MonoBehaviour
         character = GetComponent<Character>();
         StartCoroutine(PlayerShot());
         audioSource = GetComponent<AudioSource>();
+        playerIcons = GameObject.FindGameObjectsWithTag("PlayerHp");
     }
 
     IEnumerator Blink()
