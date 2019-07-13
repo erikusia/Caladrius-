@@ -14,6 +14,9 @@ public class Gage : MonoBehaviour
     private Quaternion finish;
     private float t;
 
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class Gage : MonoBehaviour
         character = GetComponent<Character>();
         start = Quaternion.Euler(0, 0, 20);
         finish = Quaternion.Euler(0, 0, -20);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,9 +34,10 @@ public class Gage : MonoBehaviour
 
         if (gage >= 0)
         {
-            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
+            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton") || gage )
             {
-                gage -= 10f * Time.deltaTime;
+                gage -= 10f;
+                gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
 
                 if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
                 {
@@ -46,6 +51,7 @@ public class Gage : MonoBehaviour
                     }
 
                     character.Beem(shotposP0);
+                    audioSource.PlayOneShot(sound1);
                     Debug.Log("ビーム");
                 }
             }

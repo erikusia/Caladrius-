@@ -86,10 +86,15 @@ public class player : MonoBehaviour
             zRotate = Mathf.Clamp(zRotate - adRotate * Time.frameCount, -40, 40);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
-        if (Input.GetKey(KeyCode.A) || InputX <= -0.8)
+        else if (Input.GetKey(KeyCode.A) || InputX <= -0.8)
         {
             Debug.Log("A");
             zRotate = Mathf.Clamp(zRotate + adRotate * Time.frameCount, -40, 40);
+            transform.eulerAngles = new Vector3(0, 0, zRotate);
+        }
+        else
+        {
+            zRotate = Mathf.Clamp(0, 0, 0);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
     }
