@@ -34,7 +34,7 @@ public class Gage : MonoBehaviour
 
         if (gage >= 0)
         {
-            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton") || gage )
+            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
             {
                 gage -= 10f;
                 gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
