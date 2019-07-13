@@ -36,12 +36,16 @@ public class player : MonoBehaviour
 
     public float interval = 0.1f;
 
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         character = GetComponent<Character>();
         StartCoroutine(PlayerShot());
+        audioSource = GetComponent<AudioSource>();
     }
 
     IEnumerator Blink()
@@ -110,6 +114,7 @@ public class player : MonoBehaviour
                     character.Shot(shotPosition);
                 }
                 yield return new WaitForSeconds(shotinterval);
+                audioSource.PlayOneShot(sound1);
             }
             yield return null;
         }
