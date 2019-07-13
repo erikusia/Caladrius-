@@ -74,6 +74,8 @@
      <Compile Include="Assets\Scripts\HomingLaser.cs" />
      <Compile Include="Assets\Scripts\HPBar.cs" />
      <Compile Include="Assets\Scripts\iTweenPathMove.cs" />
+     <Compile Include="Assets\Scripts\muzzleRotation.cs" />
+     <Compile Include="Assets\Scripts\NoRotation.cs" />
      <Compile Include="Assets\Scripts\player.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerLimit.cs" />

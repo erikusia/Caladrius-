@@ -68,6 +68,8 @@ public class player : MonoBehaviour
 
         transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
 
+        //transform.position = Vector3.Lerp();
+
         if (Input.GetMouseButton(0))
         {
             Debug.Log("推してます");

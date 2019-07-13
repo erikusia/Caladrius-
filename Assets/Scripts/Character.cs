@@ -10,11 +10,18 @@ public class Character : MonoBehaviour
     public GameObject bullet;
     public GameObject burstbullet;
     public GameObject circrebullets;
+    public GameObject beem;
 
     //プレイヤー
     public void Shot(Transform origin)
     {
         Instantiate(bulletP, origin.position, origin.rotation);
+    }
+
+    //ビーム
+    public void Beem(Transform origin)
+    {
+        Instantiate(beem, origin.position, origin.rotation);
     }
 
     //エネミー通常
