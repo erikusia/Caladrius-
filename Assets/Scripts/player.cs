@@ -28,7 +28,7 @@ public class player : MonoBehaviour
     public int hp = 3;
 
 
-    public GameObject[] playerIcons;
+    GameObject[] playerIcons;
 
     public int destroyCount = 0;
 
@@ -46,6 +46,7 @@ public class player : MonoBehaviour
         character = GetComponent<Character>();
         StartCoroutine(PlayerShot());
         audioSource = GetComponent<AudioSource>();
+        playerIcons = GameObject.FindGameObjectsWithTag("PlayerHp");
     }
 
     IEnumerator Blink()
@@ -86,10 +87,15 @@ public class player : MonoBehaviour
             zRotate = Mathf.Clamp(zRotate - adRotate * Time.frameCount, -40, 40);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
-        if (Input.GetKey(KeyCode.A) || InputX <= -0.8)
+        else if (Input.GetKey(KeyCode.A) || InputX <= -0.8)
         {
             Debug.Log("A");
             zRotate = Mathf.Clamp(zRotate + adRotate * Time.frameCount, -40, 40);
+            transform.eulerAngles = new Vector3(0, 0, zRotate);
+        }
+        else
+        {
+            zRotate = Mathf.Clamp(0, 0, 0);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
     }

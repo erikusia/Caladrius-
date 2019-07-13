@@ -14,6 +14,7 @@ public class Character : MonoBehaviour
     public GameObject beem;
 
     public GameObject SpecialBullet;
+   // public GameObject ShieldBillet;
 
 
     //プレイヤー
@@ -52,6 +53,10 @@ public class Character : MonoBehaviour
         Instantiate(SpecialBullet, origin.position, origin.rotation);
     }
 
+    //public void shieldShot(Transform origin)
+    //{
+    //    Instantiate(ShieldBillet, origin.position, origin.rotation);
+    //}
 
 
     public void Move(Vector3 direcion)
