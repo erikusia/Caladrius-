@@ -6,16 +6,20 @@ public class Character : MonoBehaviour
 {
     public float movespeed;
     public float shotinterval;
-    public GameObject bulletP;
-    public GameObject bullet;
+    public GameObject PlayerBullet;
+    public GameObject EnemyBullet;
     public GameObject burstbullet;
     public GameObject circrebullets;
+<<<<<<< HEAD
     public GameObject beem;
+=======
+    public GameObject SpecialBullet;
+>>>>>>> 51f750cba4c335dec6a9170a2e6067d78f40b929
 
     //プレイヤー
     public void Shot(Transform origin)
     {
-        Instantiate(bulletP, origin.position, origin.rotation);
+        Instantiate(PlayerBullet, origin.position, origin.rotation);
     }
 
     //ビーム
@@ -27,7 +31,7 @@ public class Character : MonoBehaviour
     //エネミー通常
     public void Shot0(Transform origin)
     {
-        Instantiate(bullet, origin.position, origin.rotation);
+        Instantiate(EnemyBullet, origin.position, origin.rotation);
         
     }
 
@@ -42,6 +46,13 @@ public class Character : MonoBehaviour
     {
         Instantiate(circrebullets, origin.position, origin.rotation);
     }
+
+    public void specialShot(Transform origin)
+    {
+        Instantiate(SpecialBullet, origin.position, origin.rotation);
+    }
+
+
 
     public void Move(Vector3 direcion)
     {

@@ -43,6 +43,7 @@ public class EnemyManager : MonoBehaviour
                 }
             }
         }
+
     }
 
     //private void Awake()

@@ -7,31 +7,19 @@ public class Bullet : MonoBehaviour
     public float BulletSpeed = 5;
 
     public int power = 1;
+    new Rigidbody rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = transform.forward* BulletSpeed;
+        
+        rigidbody = GetComponent<Rigidbody>();
     }
 
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (!GetComponent<Renderer>().isVisible)
-        {
-            //Debug.Log("画面外です");
-            //Destroy(gameObject);
-        }
+        rigidbody.velocity = transform.forward * BulletSpeed;
     }
 
-    private void OnBecameInvisible()
-    {
-        Debug.Log("画面外です");
-
-
-        //Rect rc = new Rect(Vector2.zero, new Vector2(1000, 5000));
-        //rc.Contains()
-    }
 
 }
