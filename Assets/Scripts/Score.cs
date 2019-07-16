@@ -11,10 +11,10 @@ public class Score : MonoBehaviour
     public Text highScoreText;
 
     // スコア
-    public static int score = 0;
+    public static float score = 0;
 
     // ハイスコア
-    public static int highScore = 0;
+    public static float highScore = 0;
 
     // PlayerPrefsで保存するためのキー
     public string highScoreKey = "highScore";
@@ -36,7 +36,7 @@ public class Score : MonoBehaviour
         {
             highScore = score;
 
-            PlayerPrefs.SetInt(highScoreKey, highScore);
+            PlayerPrefs.SetFloat(highScoreKey, highScore);
 
             highScoreText.text = "HighScore" + highScore.ToString();
         }
@@ -53,7 +53,7 @@ public class Score : MonoBehaviour
         score = 0;
 
         // ハイスコアを取得する。保存されてなければ0を取得する。
-        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        highScore = PlayerPrefs.GetFloat(highScoreKey, 0);
     }
 
     // ポイントの追加
@@ -66,7 +66,7 @@ public class Score : MonoBehaviour
     public void Save()
     {
         // ハイスコアを保存する
-        PlayerPrefs.SetInt(highScoreKey, highScore);
+        PlayerPrefs.SetFloat(highScoreKey, highScore);
         PlayerPrefs.Save();
 
         // ゲーム開始前の状態に戻す

@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public float hp = 1;
 
     Score score;
-    public int EnemyScore = 10;
+    public float EnemyScore = 10.0f;
 
     Bullet playerBullet;
     PlayerShield playerShield;

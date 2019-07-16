@@ -743,16 +743,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2623618608310554008, guid: c22040160031c2044b1924040b455abe,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623618608310554008, guid: c22040160031c2044b1924040b455abe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2629087118444351340, guid: c22040160031c2044b1924040b455abe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -806,6 +796,16 @@ PrefabInstance:
     - target: {fileID: 2629087118444351340, guid: c22040160031c2044b1924040b455abe,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623618608310554008, guid: c22040160031c2044b1924040b455abe,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623618608310554008, guid: c22040160031c2044b1924040b455abe,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2624735699730411222, guid: c22040160031c2044b1924040b455abe,
