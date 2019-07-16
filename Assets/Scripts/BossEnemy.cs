@@ -14,9 +14,13 @@ public class BossEnemy : MonoBehaviour
     GameObject Bom;
 
     Bullet playerBullet;
+<<<<<<< HEAD
     public Slider HPSlider;
 
    
+=======
+    Slider HPSlider;
+>>>>>>> 8b99675... fuck
     float HPber = 100;
 
     public int power = 1;
