@@ -69,28 +69,18 @@ public class player : MonoBehaviour
 
         timeCount += 1;
 
-
+        //移動制限
         transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
-
-        //transform.position = Vector3.Lerp();
-
-        if (Input.GetMouseButton(0))
-        {
-            Debug.Log("推してます");
-
-            //移動制限
-            transform.localPosition = PlayerLimit.ClampPosition(transform.localPosition);
-        }
 
         if (Input.GetKey(KeyCode.D) || InputX >= 0.8)
         {
-            Debug.Log("D");
+            //Debug.Log("D");
             zRotate = Mathf.Clamp(zRotate - adRotate * Time.frameCount, -40, 40);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
         else if (Input.GetKey(KeyCode.A) || InputX <= -0.8)
         {
-            Debug.Log("A");
+            //Debug.Log("A");
             zRotate = Mathf.Clamp(zRotate + adRotate * Time.frameCount, -40, 40);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
