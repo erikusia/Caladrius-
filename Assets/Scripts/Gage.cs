@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using InputKey;
 
 public class Gage : MonoBehaviour
 {
@@ -13,9 +14,12 @@ public class Gage : MonoBehaviour
     private Quaternion start;
     private Quaternion finish;
     private float t;
+    float time;
 
     public AudioClip sound1;
     AudioSource audioSource;
+
+    public bool isCheck_Input;
 
     // Start is called before the first frame update
     void Start()
@@ -25,44 +29,69 @@ public class Gage : MonoBehaviour
         start = Quaternion.Euler(0, 0, 20);
         finish = Quaternion.Euler(0, 0, -20);
         audioSource = GetComponent<AudioSource>();
+
+        StartCoroutine(GageIE());
     }
 
     // Update is called once per frame
-    void Update()
+    IEnumerator GageIE()
     {
-        timeCount += 1;
+        Debug.Log("a");
 
-        if (gage >= 0)
+
+
+        while (true)
         {
-            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton") || gage )
+ 
+            if (gage != 0.0f )
             {
-                gage -= 10f;
-                gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
 
-                if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
+                if (Input.anyKey)
                 {
+                    isCheck_Input = false;
 
-                    Transform shotposP0 = transform.GetChild(5);
-
-                    if(t<0.01f)
+                    if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton") && isCheck_Input == false)
                     {
-                        t += 5;
-                        shotposP0.rotation = Quaternion.Slerp(start, finish, t);
+                        gage -= 0.03f;
+                        gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
+
+                        //if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton") && isCheck_Input == false)
+                        //{
+
+                        Transform shotposP0 = transform.GetChild(5);
+
+                        if (t < 0.01f)
+                        {
+                            t += 5;
+                            shotposP0.rotation = Quaternion.Slerp(start, finish, t);
+                        }
+
+                        character.Beem(shotposP0);
+                        audioSource.PlayOneShot(sound1);
+                        Debug.Log("ビーム");
+                        //}
+
+                        isCheck_Input = true;
                     }
-
-                    character.Beem(shotposP0);
-                    audioSource.PlayOneShot(sound1);
-                    Debug.Log("ビーム");
                 }
+                
             }
+            gage = Mathf.Clamp(gage, 0, 100);
+            slider.value = gage;
+
+
+            time += 1.0f * Time.deltaTime;
+
+            if(time >= 10)
+            {
+                gage += 5.0f;
+                time = 0;
+                gage = Mathf.Min(gage + 2.0f * Time.deltaTime, 100);
+            }
+
+            Debug.Log(gage);
+            yield return null;
         }
 
-        if (timeCount % 20 == 0)
-        {
-            gage += 2.0f * Time.deltaTime;
-        }
-
-        gage = Mathf.Clamp(gage, 0, 100);
-        slider.value = gage;
     }
 }

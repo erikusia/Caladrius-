@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InputKey;
 
 public class muzzleRotation : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class muzzleRotation : MonoBehaviour
     void Update()
     {
         time += speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R) || NoInput.InputX("Xbutton"))
         {
             switch (state)
             {
