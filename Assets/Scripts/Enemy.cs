@@ -8,13 +8,12 @@ public class Enemy : MonoBehaviour
     public int rotspeed;
     public int power = 1;
 
-    public int hp = 1;
+    public float hp = 1;
 
     Score score;
     public int EnemyScore = 10;
 
     Bullet playerBullet;
-
     PlayerShield playerShield;
 
     // Start is called before the first frame update

@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float BulletSpeed = 5;
 
-    public int power = 1;
+    public float power = 1;
     new Rigidbody rigidbody;
 
     // Start is called before the first frame update
