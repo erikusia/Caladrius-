@@ -13,7 +13,7 @@ public class BossEnemy : MonoBehaviour
 
     Bullet playerBullet;
     Slider HPSlider;
-    //float HPber = 100;
+    float HPber = 100;
 
     public int power = 1;
 
@@ -23,7 +23,7 @@ public class BossEnemy : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        //HPSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
+        HPSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
 
         character = GetComponent<Character>();
         character.Move(transform.forward * -1);
@@ -35,6 +35,8 @@ public class BossEnemy : MonoBehaviour
         while (true)
         {
             TimeCount += 1;
+
+            Debug.Log(TimeCount);
 
             yield return new WaitForSeconds(2f);
             for (int i = 0; i < transform.childCount; i++)
@@ -52,6 +54,7 @@ public class BossEnemy : MonoBehaviour
                         if(TimeCount >= 5)
                         {
                             state = 1;
+                            
                         }
                         break;
                     case 1:
