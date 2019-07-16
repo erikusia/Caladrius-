@@ -9,39 +9,34 @@ public class Gage3 : MonoBehaviour
     Slider slider;
     float gage = 100;
     private int timeCount;
-<<<<<<< HEAD
     Character character;
     [SerializeField]
     ParticleSystem particle;
     [SerializeField]
     Collider collider;
-    
-=======
     Gage gage1;
 
-    //static bool isCheck_Input;
+    static bool isCheck_Input;
 
->>>>>>> kaede
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         character = GetComponent<Character>();
         slider = GameObject.Find("ZSlider3").GetComponent<Slider>();
-<<<<<<< HEAD
         StartCoroutine(PlayerShot());
         collider.enabled = false;
-=======
 
         gage1 = GetComponent<Gage>();
-     
->>>>>>> kaede
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         timeCount += 1;
-<<<<<<< HEAD
         //if (Input.GetKey(KeyCode.E) || Input.GetButton("Bbutton"))
         //{
         //    gage -= 10f * Time.deltaTime;
@@ -52,23 +47,21 @@ public class Gage3 : MonoBehaviour
         //{
         //    gage += 2.0f * Time.deltaTime;
         //    gage = Mathf.Min(gage + 2.0f * Time.deltaTime, 100);
+        //} 
+
+        //if (Input.anyKey == false) gage1.isCheck_Input = false;
+        //if (Input.GetKey(KeyCode.E) || NoInput.InputB("Bbutton") && gage1.isCheck_Input == false)
+        //{
+        //    Debug.Log("B");
+        //    gage -= 10f * Time.deltaTime;
+        //    gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
+        //    gage1.isCheck_Input = true;
         //}
-=======
-
-       
-
-        if (Input.anyKey == false) gage1.isCheck_Input = false;
-        if (Input.GetKey(KeyCode.E) || NoInput.InputB("Bbutton") && gage1.isCheck_Input == false)
-        {
-            Debug.Log("B");
-            gage -= 10f * Time.deltaTime;
-            gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
-            gage1.isCheck_Input = true;
-        }
->>>>>>> kaede
 
         //gage = Mathf.Clamp(gage, 0, 100);
         //slider.value = gage;
+
+
     }
 
     IEnumerator PlayerShot()
@@ -111,7 +104,7 @@ public class Gage3 : MonoBehaviour
                 {
                     Debug.Log("撃てません！");
                 }
-
+                audioSource.PlayOneShot(sound1);
             }
             else /*if(Input.GetKeyUp(KeyCode.E) || Input.GetButtonUp("Bbutton"))*/
             {

@@ -15,10 +15,6 @@ public class PlayerShield : MonoBehaviour
 
     Vector3 lot;
 
-    Score score;
-
-    public int BulletScore = 5;
-
     List<ParticleSystem.Particle> m_exitList = new List<ParticleSystem.Particle>();
 
     // Start is called before the first frame update

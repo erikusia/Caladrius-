@@ -61,11 +61,6 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
                 Score.score += EnemyScore;
-
-                while(true)
-                {
-                    
-                }
             }
         }
 
