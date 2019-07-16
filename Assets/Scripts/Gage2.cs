@@ -49,13 +49,12 @@ public class Gage2 : MonoBehaviour
                         //shotPositionの位置方向で
                         character.specialShot(shotPosition);
                     }
-                    gage -= 100f;
-                    Debug.Log(gage);
+                    gage -= 10f;
                     yield return new WaitForSeconds(shotinterval);
                 }
                 else if (gage <= 0)
                 {
-                    Debug.Log("撃てません！");
+                    break;
                 }
                 audioSource.PlayOneShot(sound1);
 
@@ -63,7 +62,7 @@ public class Gage2 : MonoBehaviour
 
             if (timeCount % 20 == 0)
             {
-                gage += 2.0f * Time.deltaTime;
+                gage += 2.0f;
             }
 
             gage = Mathf.Clamp(gage, 0, 100);

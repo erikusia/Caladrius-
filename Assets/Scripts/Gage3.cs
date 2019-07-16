@@ -9,9 +9,9 @@ public class Gage3 : MonoBehaviour
     float gage = 100;
     private int timeCount;
     Character character;
-    [SerializeField]
+    //[SerializeField]
     ParticleSystem particle;
-    [SerializeField]
+    //[SerializeField]
     Collider collider;
     
     // Start is called before the first frame update
@@ -19,8 +19,13 @@ public class Gage3 : MonoBehaviour
     {
         character = GetComponent<Character>();
         slider = GameObject.Find("ZSlider3").GetComponent<Slider>();
-        StartCoroutine(PlayerShot());
+        
+        particle = GameObject.Find("PlayerShield 1").GetComponent<ParticleSystem>();
+        collider = GameObject.Find("PlayerShield 1").GetComponent<Collider>();
         collider.enabled = false;
+
+        StartCoroutine(PlayerShot());
+        Debug.Log(particle);
     }
 
     // Update is called once per frame
@@ -87,12 +92,12 @@ public class Gage3 : MonoBehaviour
             }
             else /*if(Input.GetKeyUp(KeyCode.E) || Input.GetButtonUp("Bbutton"))*/
             {
-                if(particle.isPlaying == true)
+                if (particle.isPlaying)
                 {
                     particle.Stop(true);
                     collider.enabled = false;
                 }
-                
+
             }
 
             if (timeCount % 10 == 0)
