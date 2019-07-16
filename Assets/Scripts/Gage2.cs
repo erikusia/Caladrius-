@@ -49,7 +49,7 @@ public class Gage2 : MonoBehaviour
                         //shotPositionの位置方向で
                         character.specialShot(shotPosition);
                     }
-                    gage -= 10f;
+                    gage -= 1f;
                     yield return new WaitForSeconds(shotinterval);
                 }
                 else if (gage <= 0)
@@ -60,9 +60,9 @@ public class Gage2 : MonoBehaviour
 
             }
 
-            if (timeCount % 20 == 0)
+            if (timeCount % 10 == 0)
             {
-                gage += 2.0f;
+                gage += 0.5f;
             }
 
             gage = Mathf.Clamp(gage, 0, 100);

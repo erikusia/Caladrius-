@@ -17,13 +17,13 @@ public class BossEnemy : MonoBehaviour
 
     public int power = 1;
 
-    public int hp = 1;
+    public float hp = 1;
 
 
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        //HPSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
+        HPSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
 
         character = GetComponent<Character>();
         character.Move(transform.forward * -1);
@@ -142,13 +142,6 @@ public class BossEnemy : MonoBehaviour
     //}
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        //transform.Rotate(Vector3.forward * rotspeed);
-    }
-
-
     void OnTriggerEnter(Collider col)
     {
 
@@ -156,9 +149,10 @@ public class BossEnemy : MonoBehaviour
         {
             playerBullet = col.gameObject.GetComponent<Bullet>();
 
-            Debug.Log("敵Hit");
+            Debug.Log(HPSlider.value);
             // ヒットポイントを減らす
             hp = hp - playerBullet.power;
+            HPSlider.value = hp;
 
             if (hp <= 0)
             {
@@ -166,7 +160,6 @@ public class BossEnemy : MonoBehaviour
                 Debug.Log("敵死亡");
                 SceneManager.LoadScene("GameClear");
             }
-            HPSlider.value = hp;
         }
         
     }

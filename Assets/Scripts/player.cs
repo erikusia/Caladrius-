@@ -26,7 +26,7 @@ public class player : MonoBehaviour
 
     Bullet enemyBullet;
     Enemy AttackEnemy;
-    public int hp = 3;
+    public float hp = 3;
 
 
     GameObject[] playerIcons;
