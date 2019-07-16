@@ -54,7 +54,7 @@ MeshRenderer:
   m_GameObject: {fileID: 2623618608310554008}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -130,6 +130,7 @@ MonoBehaviour:
     type: 3}
   burstbullet: {fileID: 0}
   circrebullets: {fileID: 0}
+  beem: {fileID: 0}
   SpecialBullet: {fileID: 0}
 --- !u!114 &2624735699730411221
 MonoBehaviour:
@@ -146,6 +147,7 @@ MonoBehaviour:
   rotspeed: 7
   power: 1
   hp: 1
+  EnemyScore: 10
 --- !u!1 &2624735699381714571
 GameObject:
   m_ObjectHideFlags: 0
