@@ -11,13 +11,13 @@ public class Score : MonoBehaviour
     public Text highScoreText;
 
     // スコア
-    private int score;
+    public static int score = 0;
 
     // ハイスコア
-    private int highScore;
+    public static int highScore = 0;
 
     // PlayerPrefsで保存するためのキー
-    private string highScoreKey = "highScore";
+    public string highScoreKey = "highScore";
 
 
     // Start is called before the first frame update
@@ -27,6 +27,7 @@ public class Score : MonoBehaviour
         PlayerPrefs.DeleteAll();
     }
 
+    
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +35,10 @@ public class Score : MonoBehaviour
         if (highScore < score)
         {
             highScore = score;
+
+            PlayerPrefs.SetInt(highScoreKey, highScore);
+
+            highScoreText.text = "HighScore" + highScore.ToString();
         }
 
         // スコア・ハイスコアを表示する

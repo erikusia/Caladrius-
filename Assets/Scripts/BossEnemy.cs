@@ -19,6 +19,10 @@ public class BossEnemy : MonoBehaviour
 
     public int hp = 1;
 
+    Score score;
+
+    public int BossScore = 1000;
+
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -164,10 +168,29 @@ public class BossEnemy : MonoBehaviour
             {
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
+              Score.score += BossScore;
                 SceneManager.LoadScene("GameClear");
             }
             HPSlider.value = hp;
         }
-        
+
+        if (col.gameObject.tag == "Beem")
+        {
+            playerBullet = col.gameObject.GetComponent<Bullet>();
+
+            Debug.Log("敵に特殊ビームHit");
+            // ヒットポイントを減らす
+            hp = hp - playerBullet.power;
+
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+                Debug.Log("敵死亡");
+                Score.score += BossScore;
+                SceneManager.LoadScene("GameClear");
+            }
+            HPSlider.value = hp;
+        }
+
     }
 }

@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
 
     public int hp = 1;
 
-
+    Score score;
+    public int EnemyScore = 10;
 
     Bullet playerBullet;
 
@@ -59,6 +60,12 @@ public class Enemy : MonoBehaviour
             {
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
+                Score.score += EnemyScore;
+
+                while(true)
+                {
+                    
+                }
             }
         }
 
@@ -67,6 +74,23 @@ public class Enemy : MonoBehaviour
             playerShield = col.gameObject.GetComponent<PlayerShield>();
             Destroy(gameObject);
             Debug.Log("敵死亡");
+            Score.score += EnemyScore;
+            
+        }
+
+        if (col.gameObject.tag == "Beem")
+        {
+            playerBullet = col.gameObject.GetComponent<Bullet>();
+
+            Debug.Log("敵に特殊ビームHit");
+            // ヒットポイントを減らす
+            hp = hp - playerBullet.power;
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+                Debug.Log("敵死亡");
+                Score.score += EnemyScore*2;
+            }
         }
 
     }

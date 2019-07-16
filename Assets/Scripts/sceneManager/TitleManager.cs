@@ -17,7 +17,7 @@ public class TitleManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)||Input.GetButton("Abutton"))
         {
-            SceneManager.LoadScene("GamePlay");
+            SceneManager.LoadScene("Hit");
         }
     }
 }
