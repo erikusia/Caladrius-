@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLimit : MonoBehaviour
 {
 
-    public static Vector3 MoveLimit = new Vector3(13.5f, 0,7.2f);
+    public static Vector3 MoveLimit = new Vector3(9.2f, 0,7.2f);
 
 
     //public static Vector3 ClampRotation(Quaternion rot)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using InputKey;
 
 public class Gage : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Gage : MonoBehaviour
 
     public AudioClip sound1;
     AudioSource audioSource;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,15 +36,15 @@ public class Gage : MonoBehaviour
 
         if (gage >= 0)
         {
-            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
+            if (MyInput.MyInputKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
             {
                 gage -= 10f;
                 gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
 
-                if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
-                {
+                //if (MyInput.MyInputKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
+                //{
 
-                    Transform shotposP0 = transform.GetChild(5);
+                    Transform shotposP0 = transform.GetChild(6);
 
                     if(t<0.01f)
                     {
@@ -53,7 +55,7 @@ public class Gage : MonoBehaviour
                     character.Beem(shotposP0);
                     audioSource.PlayOneShot(sound1);
                     Debug.Log("ビーム");
-                }
+                //}
             }
         }
 

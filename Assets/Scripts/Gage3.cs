@@ -9,76 +9,27 @@ public class Gage3 : MonoBehaviour
     Slider slider;
     float gage = 100;
     private int timeCount;
-<<<<<<< HEAD
     Character character;
-    //[SerializeField]
     ParticleSystem particle;
-    //[SerializeField]
     Collider collider;
-    
-=======
-    Gage gage1;
 
-    //static bool isCheck_Input;
-
->>>>>>> kaede
     // Start is called before the first frame update
     void Start()
     {
         character = GetComponent<Character>();
         slider = GameObject.Find("ZSlider3").GetComponent<Slider>();
-<<<<<<< HEAD
         
         particle = GameObject.Find("PlayerShield 1").GetComponent<ParticleSystem>();
         collider = GameObject.Find("PlayerShield 1").GetComponent<Collider>();
         collider.enabled = false;
 
         StartCoroutine(PlayerShot());
-        Debug.Log(particle);
-=======
-<<<<<<< HEAD
-        StartCoroutine(PlayerShot());
-        collider.enabled = false;
-=======
-
-        gage1 = GetComponent<Gage>();
-     
->>>>>>> kaede
->>>>>>> master
+        //Debug.Log(particle);
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeCount += 1;
-<<<<<<< HEAD
-        //if (Input.GetKey(KeyCode.E) || Input.GetButton("Bbutton"))
-        //{
-        //    gage -= 10f * Time.deltaTime;
-        //    gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
-        //}
-
-        //if (timeCount % 10 == 0)
-        //{
-        //    gage += 2.0f * Time.deltaTime;
-        //    gage = Mathf.Min(gage + 2.0f * Time.deltaTime, 100);
-        //}
-=======
-
-       
-
-        if (Input.anyKey == false) gage1.isCheck_Input = false;
-        if (Input.GetKey(KeyCode.E) || NoInput.InputB("Bbutton") && gage1.isCheck_Input == false)
-        {
-            Debug.Log("B");
-            gage -= 10f * Time.deltaTime;
-            gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
-            gage1.isCheck_Input = true;
-        }
->>>>>>> kaede
-
-        //gage = Mathf.Clamp(gage, 0, 100);
-        //slider.value = gage;
     }
 
     IEnumerator PlayerShot()
@@ -86,9 +37,8 @@ public class Gage3 : MonoBehaviour
         while (true)
         {
             
-            if (Input.GetKey(KeyCode.E) || Input.GetButton("Bbutton"))
+            if (MyInput.MyInputKey(KeyCode.E) || MyInput.MyInputButton("Bbutton"))
             {
-
                if( particle.isPlaying  == false)
                 {
                     particle.Play(true);
@@ -96,15 +46,6 @@ public class Gage3 : MonoBehaviour
                 }
                 if (gage > 0)
                 {
-                    //for (int i = 0; i <= 0; i++)
-                    //{
-                    //    Transform shotPosition = transform.GetChild(i);
-                    //    Debug.Log(i);
-                    //    Debug.Log("特殊弾3が出てます");
-                    //    //shotPositionの位置方向で
-                    //    //character.shieldShot(shotPosition);
-                    //    //character.Shot(shotPosition);
-                    //}
 
                     for (int i = 0; i < 3; i++)
                     {
@@ -114,7 +55,7 @@ public class Gage3 : MonoBehaviour
                         character.Shot(shotPosition);
                     }
                     gage -= 1f;
-                    Debug.Log(gage);
+                    //Debug.Log(gage);
                     yield return null;
                 }
                 else if (gage <= 0)
@@ -123,7 +64,7 @@ public class Gage3 : MonoBehaviour
                 }
 
             }
-            else /*if(Input.GetKeyUp(KeyCode.E) || Input.GetButtonUp("Bbutton"))*/
+            else 
             {
                 if (particle.isPlaying)
                 {
