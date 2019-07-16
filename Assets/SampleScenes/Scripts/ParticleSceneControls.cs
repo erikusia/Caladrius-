@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+using UnityStandardAssets.Effects;
 
 
 namespace UnityStandardAssets.SceneUtils
@@ -37,7 +37,7 @@ namespace UnityStandardAssets.SceneUtils
         public EventSystem eventSystem;
 
 
-
+        private ParticleSystemMultiplier m_ParticleMultiplier;
         private List<Transform> m_CurrentParticleList = new List<Transform>();
         private Transform m_Instance;
         private static int s_SelectedIndex = 0;

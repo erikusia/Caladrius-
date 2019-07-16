@@ -11,13 +11,19 @@ public class BossEnemy : MonoBehaviour
     int state;
     public float TimeCount = 0;
 
+    GameObject Bom;
+
     Bullet playerBullet;
-    Slider HPSlider;
+    public Slider HPSlider;
+
+   
     float HPber = 100;
 
     public int power = 1;
 
     public int hp = 1;
+
+    GameObject gameObject;
 
 
     // Start is called before the first frame update
@@ -30,7 +36,6 @@ public class BossEnemy : MonoBehaviour
         state = 0;
   
         HPSlider.value = hp;
-        
 
         while (true)
         {
@@ -149,6 +154,7 @@ public class BossEnemy : MonoBehaviour
     void Update()
     {
         //transform.Rotate(Vector3.forward * rotspeed);
+        Bom.SetActive(true);
     }
 
 
@@ -164,7 +170,7 @@ public class BossEnemy : MonoBehaviour
             hp = hp - playerBullet.power;
 
             if (hp <= 0)
-            {
+            {              
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
                 SceneManager.LoadScene("GameClear");
