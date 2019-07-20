@@ -23,6 +23,7 @@ public class Gage3 : MonoBehaviour
 
     public AudioClip sound1;
     AudioSource audioSource;
+    int time;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,6 @@ public class Gage3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeCount += 1;
 
     }
 
@@ -45,18 +45,18 @@ public class Gage3 : MonoBehaviour
     {
         while (true)
         {
-            
+            time += 1;
             if (Input.GetKey(KeyCode.E) || Input.GetButton("Bbutton"))
             {
-
-               if( particle.isPlaying  == false)
-                {
-                    particle.Play(true);
-                    collider.enabled = true;
-                }
                 if (gage > 0)
                 {
-                  
+
+                    if (particle.isPlaying == false)
+                    {
+                        particle.Play(true);
+                        collider.enabled = true;
+                    }
+
                     for (int i = 0; i < 3; i++)
                     {
                         Transform shotPosition = transform.GetChild(i);
@@ -64,26 +64,26 @@ public class Gage3 : MonoBehaviour
                         //shotPositionの位置方向で
                         character.Shot(shotPosition);
                     }
-                    gage -= 1f;
+                    gage -= 5;
                     yield return new WaitForSeconds(shotinterval);
                 }
                 else if (gage <= 0)
                 {
-                    Debug.Log("撃てません！");
-                    {
                         if (particle.isPlaying == true)
                         {
                             particle.Stop(true);
                             collider.enabled = false;
+                            
                         }
-
-                    }
-
-                    break;
                 }
                 audioSource.PlayOneShot(sound1);
             }
-            else /*if(Input.GetKeyUp(KeyCode.E) || Input.GetButtonUp("Bbutton"))*/
+            else if (time % 60 == 0 && (!Input.GetKey(KeyCode.E) || !Input.GetButton("Bbutton")))
+            {
+                Debug.Log(gage);
+                gage += 10;
+            }
+            else
             {
                 if (particle.isPlaying == true)
                 {
@@ -92,12 +92,6 @@ public class Gage3 : MonoBehaviour
                 }
 
             }
-
-            if (timeCount % 20 == 0)
-            {
-                gage += 0.5f;
-            }
-
             gage = Mathf.Clamp(gage, 0, 100);
             slider.value = gage;
 
