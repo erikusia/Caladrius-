@@ -38,13 +38,13 @@ public class Gage : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
             {
-                gage -= 1f;
+                gage -= 10f;
                 gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
 
-                if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
-                {
+                //if (MyInput.MyInputKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
+                //{
 
-                    Transform shotposP0 = transform.GetChild(5);
+                    Transform shotposP0 = transform.GetChild(6);
 
                     if(t<0.01f)
                     {
@@ -54,14 +54,14 @@ public class Gage : MonoBehaviour
 
                     character.Beem(shotposP0);
                     audioSource.PlayOneShot(sound1);
-                    Debug.Log("ビーム");
-                }
+                    Debug.Log("特殊弾1が出ています");
+                //}
             }
         }
 
-        if (timeCount % 10 == 0)
+        if (timeCount % 20 == 0)
         {
-            gage += 0.5f * Time.deltaTime;
+            gage += 2.0f * Time.deltaTime;
         }
 
         gage = Mathf.Clamp(gage, 0, 100);
