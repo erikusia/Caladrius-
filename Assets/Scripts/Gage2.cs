@@ -16,6 +16,7 @@ public class Gage2 : MonoBehaviour
 
     public AudioClip sound1;
     AudioSource audioSource;
+    int time;
 
 
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class Gage2 : MonoBehaviour
     {
         while (true)
         {
+            time += 1;
             if (Input.GetKey(KeyCode.F) || Input.GetButton("Ybutton"))
             {
                 if (gage > 0)
@@ -49,22 +51,23 @@ public class Gage2 : MonoBehaviour
                         //shotPositionの位置方向で
                         character.specialShot(shotPosition);
                     }
-                    gage -= 1f;
+                    gage -= 50f;
                     yield return new WaitForSeconds(shotinterval);
                 }
-                else if (gage <= 0)
-                {
-                    break;
-                }
+                //else if (gage <= 0)
+                //{
+                    
+                //}
                 audioSource.PlayOneShot(sound1);
 
             }
 
-            if (timeCount % 10 == 0)
+            else if (time%60==0&& (!Input.GetKey(KeyCode.F) || !Input.GetButton("Ybutton")))
             {
-                gage += 0.5f;
+                gage += 50f;
             }
 
+            Debug.Log(time % 60);
             gage = Mathf.Clamp(gage, 0, 100);
             slider.value = gage;
 
