@@ -45,13 +45,4 @@ public class EnemyManager : MonoBehaviour
         }
 
     }
-
-    //private void Awake()
-    //{
-    //    float x = transform.position.z-;
-    //    var a = x - Mathf.Cos(x);
-    //    transform.position = new Vector3(100, 100, 0) + new Vector3(a, 0, x);
-    //}
-
-
 }

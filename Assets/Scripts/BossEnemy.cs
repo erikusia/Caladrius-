@@ -11,19 +11,13 @@ public class BossEnemy : MonoBehaviour
     int state;
     public float TimeCount = 0;
 
-    GameObject Bom;
-
     Bullet playerBullet;
-    public Slider HPSlider;
-
-   
-    float HPber = 100;
+    Slider HPSlider;
+    //float HPber = 100;
 
     public int power = 1;
 
-    public int hp = 1;
-
-    GameObject gameObject;
+    public float hp = 1;
 
 
     // Start is called before the first frame update
@@ -36,12 +30,11 @@ public class BossEnemy : MonoBehaviour
         state = 0;
   
         HPSlider.value = hp;
+        
 
         while (true)
         {
             TimeCount += 1;
-
-            Debug.Log(TimeCount);
 
             yield return new WaitForSeconds(2f);
             for (int i = 0; i < transform.childCount; i++)
@@ -59,7 +52,6 @@ public class BossEnemy : MonoBehaviour
                         if(TimeCount >= 5)
                         {
                             state = 1;
-                            
                         }
                         break;
                     case 1:
@@ -150,14 +142,6 @@ public class BossEnemy : MonoBehaviour
     //}
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        //transform.Rotate(Vector3.forward * rotspeed);
-        //Bom.SetActive(true);
-    }
-
-
     void OnTriggerEnter(Collider col)
     {
 
@@ -165,18 +149,17 @@ public class BossEnemy : MonoBehaviour
         {
             playerBullet = col.gameObject.GetComponent<Bullet>();
 
-            Debug.Log("敵Hit");
+            Debug.Log(HPSlider.value);
             // ヒットポイントを減らす
             hp = hp - playerBullet.power;
+            HPSlider.value = hp;
 
             if (hp <= 0)
             {
-                //Bom.SetActive(true);
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
                 SceneManager.LoadScene("GameClear");
             }
-            HPSlider.value = hp;
         }
         
     }

@@ -26,7 +26,7 @@ public class player : MonoBehaviour
 
     Bullet enemyBullet;
     Enemy AttackEnemy;
-    public int hp = 3;
+    public float hp = 3;
 
 
     GameObject[] playerIcons;
@@ -74,13 +74,13 @@ public class player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D) || InputX >= 0.8)
         {
-            Debug.Log("D");
+            //Debug.Log("D");
             zRotate = Mathf.Clamp(zRotate - adRotate * Time.frameCount, -40, 40);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }
         else if (Input.GetKey(KeyCode.A) || InputX <= -0.8)
         {
-            Debug.Log("A");
+            //Debug.Log("A");
             zRotate = Mathf.Clamp(zRotate + adRotate * Time.frameCount, -40, 40);
             transform.eulerAngles = new Vector3(0, 0, zRotate);
         }

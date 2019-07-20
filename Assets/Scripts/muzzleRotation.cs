@@ -19,7 +19,7 @@ public class muzzleRotation : MonoBehaviour
     void Update()
     {
         time += speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.R) || NoInput.InputX("Xbutton"))
+        if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
         {
             switch (state)
             {

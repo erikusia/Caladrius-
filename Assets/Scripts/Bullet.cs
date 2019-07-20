@@ -6,8 +6,9 @@ public class Bullet : MonoBehaviour
 {
     public float BulletSpeed = 5;
 
-    public int power = 1;
+    public float power = 1;
     new Rigidbody rigidbody;
+    PlayerShield playerShield;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,16 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         rigidbody.velocity = transform.forward * BulletSpeed;
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "PlayerShield")
+        {
+            playerShield = col.gameObject.GetComponent<PlayerShield>();
+            Destroy(gameObject);
+            Debug.Log("敵死亡");
+        }
     }
 
 

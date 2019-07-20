@@ -223,7 +223,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 118
   m_CollisionDetection: 0
 --- !u!65 &8218908052013857623
 BoxCollider:
@@ -233,7 +233,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8218908051173487421}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1977.851, y: 634.95404, z: 3051.992}
@@ -253,7 +253,7 @@ MonoBehaviour:
   rotspeed: 0
   TimeCount: 0
   power: 1
-  hp: 200
+  hp: 1000
 --- !u!114 &8218908052013857629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,12 +268,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 0
   shotinterval: 1
-  bulletP: {fileID: 6959929673756167929, guid: 61848385a915ab145980f7f5b827e959, type: 3}
-  bullet: {fileID: 3675266543846072961, guid: 02aafbe967f53ad4698797bd66a38904, type: 3}
+  PlayerBullet: {fileID: 0}
+  EnemyBullet: {fileID: 3675266543846072961, guid: 02aafbe967f53ad4698797bd66a38904,
+    type: 3}
   burstbullet: {fileID: 4136641022522549595, guid: 410259efad5cd584a802c68eb29b0696,
     type: 3}
   circrebullets: {fileID: 8541159992024890679, guid: b568fce5182fa394da70384e946a2dc1,
     type: 3}
+  beem: {fileID: 0}
+  SpecialBullet: {fileID: 0}
 --- !u!114 &8129222964998126345
 MonoBehaviour:
   m_ObjectHideFlags: 0

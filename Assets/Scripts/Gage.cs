@@ -38,7 +38,7 @@ public class Gage : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
             {
-                gage -= 10f;
+                gage -= 1f;
                 gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
 
                 if (Input.GetKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
@@ -59,9 +59,9 @@ public class Gage : MonoBehaviour
             }
         }
 
-        if (timeCount % 20 == 0)
+        if (timeCount % 10 == 0)
         {
-            gage += 2.0f * Time.deltaTime;
+            gage += 0.5f * Time.deltaTime;
         }
 
         gage = Mathf.Clamp(gage, 0, 100);

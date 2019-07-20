@@ -21,7 +21,7 @@ public class Blink : MonoBehaviour
         Debug.Log("Call blink");
         while (true)
         {
-            Debug.Log("BLINK image is enable:" + text.enabled);
+            //Debug.Log("BLINK image is enable:" + text.enabled);
             text.enabled = !text.enabled;
             yield return new WaitForSeconds(interval);
         }

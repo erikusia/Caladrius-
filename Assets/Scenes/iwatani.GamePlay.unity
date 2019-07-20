@@ -170,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 480865653490776603, guid: ce03abea572490f45adc7eed704fddec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 480865653490776603, guid: ce03abea572490f45adc7eed704fddec,
         type: 3}
@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 3786570667442659401, guid: ffe424334b6dbc34aa80038d43a02ad5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3786570667442659401, guid: ffe424334b6dbc34aa80038d43a02ad5,
         type: 3}
@@ -362,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 3786428481421273733, guid: 3ba8056fafeeed94eac4f469c4daaed7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3786428481421273733, guid: 3ba8056fafeeed94eac4f469c4daaed7,
         type: 3}
@@ -441,7 +441,7 @@ PrefabInstance:
     - target: {fileID: 9095449414960111328, guid: a7e9c34a7aefda7409594a3847cac27f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9095449414960111328, guid: a7e9c34a7aefda7409594a3847cac27f,
         type: 3}
@@ -527,6 +527,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1306045122884091277, guid: dde76761c88498c45a2253f4458e2cf5,
+        type: 3}
+      propertyPath: m_CustomSkybox
+      value: 
+      objectReference: {fileID: 2100000, guid: 227af8007854ca246a48c2f3edf86a4d, type: 2}
+    - target: {fileID: 1306045122884091277, guid: dde76761c88498c45a2253f4458e2cf5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1306045122884091279, guid: dde76761c88498c45a2253f4458e2cf5,
         type: 3}
       propertyPath: m_BackGroundColor.r
@@ -545,16 +555,6 @@ PrefabInstance:
     - target: {fileID: 1306045122884091279, guid: dde76761c88498c45a2253f4458e2cf5,
         type: 3}
       propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1306045122884091277, guid: dde76761c88498c45a2253f4458e2cf5,
-        type: 3}
-      propertyPath: m_CustomSkybox
-      value: 
-      objectReference: {fileID: 2100000, guid: 227af8007854ca246a48c2f3edf86a4d, type: 2}
-    - target: {fileID: 1306045122884091277, guid: dde76761c88498c45a2253f4458e2cf5,
-        type: 3}
-      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -609,7 +609,7 @@ PrefabInstance:
     - target: {fileID: 861907111220663132, guid: cf0cc653d79aed84faadcc01f4d3417a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 861907111220663132, guid: cf0cc653d79aed84faadcc01f4d3417a,
         type: 3}
@@ -706,13 +706,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 1569633748, guid: cf0cc653d79aed84faadcc01f4d3417a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-=======
->>>>>>> 2d784a6... UIを変更
     - target: {fileID: 274182957, guid: cf0cc653d79aed84faadcc01f4d3417a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -721,29 +714,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 105430778, guid: cf0cc653d79aed84faadcc01f4d3417a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105430778, guid: cf0cc653d79aed84faadcc01f4d3417a, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105430778, guid: cf0cc653d79aed84faadcc01f4d3417a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569633750, guid: cf0cc653d79aed84faadcc01f4d3417a, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1569633750, guid: cf0cc653d79aed84faadcc01f4d3417a, type: 3}
-      propertyPath: m_MaxValue
-      value: 1
-      objectReference: {fileID: 0}
-=======
->>>>>>> 2d784a6... UIを変更
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf0cc653d79aed84faadcc01f4d3417a, type: 3}
 --- !u!1001 &1845554842
@@ -753,6 +723,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4463323154875568504, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8206650041496227463, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: m_Name
@@ -851,82 +826,3 @@ PrefabInstance:
       objectReference: {fileID: 345039312}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36fea44e211c5bb468668ca79f4c017f, type: 3}
---- !u!1 &2056210161 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8206650041496227463, guid: 36fea44e211c5bb468668ca79f4c017f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1845554842}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &2056210162
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056210161}
-  m_Enabled: 1
-  serializedVersion: 9
-  m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
-  m_Range: 10
-  m_SpotAngle: 15
-  m_InnerSpotAngle: 1
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 1
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 10, y: 10}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!135 &2056210163
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056210161}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.8870659
-  m_Center: {x: -0.00000047683716, y: -0.0000009536743, z: -0.45669937}

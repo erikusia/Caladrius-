@@ -123,13 +123,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09998243f2c3c4647bd565196a024daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 7
+  movespeed: 10
   shotinterval: 2.2
   PlayerBullet: {fileID: 0}
   EnemyBullet: {fileID: 6959929673756167929, guid: 61848385a915ab145980f7f5b827e959,
     type: 3}
   burstbullet: {fileID: 0}
   circrebullets: {fileID: 0}
+  beem: {fileID: 0}
   SpecialBullet: {fileID: 0}
 --- !u!114 &2624735699730411221
 MonoBehaviour:
