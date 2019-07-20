@@ -36,12 +36,12 @@ public class Gage : MonoBehaviour
 
         if (gage >= 0)
         {
-            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
+            if (Input.GetKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
             {
                 gage -= 1f;
                 gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
 
-                if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
+                if (Input.GetKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
                 {
 
                     Transform shotposP0 = transform.GetChild(5);
