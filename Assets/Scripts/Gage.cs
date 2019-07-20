@@ -8,7 +8,7 @@ public class Gage : MonoBehaviour
 {
     Slider slider;
     float gage = 100;
-    private int timeCount;
+    private float timeCount;
     Character character;
 
     private Quaternion start;
@@ -32,16 +32,16 @@ public class Gage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeCount += 1;
+        timeCount +=1.0f;
 
-        if (gage >= 0)
+        if (gage != 0)
         {
-            if (Input.GetKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
+            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
             {
                 gage -= 1f;
                 gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
 
-                if (Input.GetKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
+                if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
                 {
 
                     Transform shotposP0 = transform.GetChild(5);
@@ -51,17 +51,17 @@ public class Gage : MonoBehaviour
                         t += 5;
                         shotposP0.rotation = Quaternion.Slerp(start, finish, t);
                     }
-
+                    Debug.Log("gage");
                     character.Beem(shotposP0);
                     audioSource.PlayOneShot(sound1);
                     Debug.Log("ビーム");
                 }
             }
         }
-
-        if (timeCount % 10 == 0)
+        if (timeCount % 2 == 0)
         {
-            gage += 0.5f * Time.deltaTime;
+            gage += 20.0f;
+            timeCount = 0;
         }
 
         gage = Mathf.Clamp(gage, 0, 100);

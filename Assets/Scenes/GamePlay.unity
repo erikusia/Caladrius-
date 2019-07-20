@@ -869,6 +869,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1433136835463384790, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 14214358686359324, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: m_Constraints
@@ -983,6 +988,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2701226052809377993, guid: fcff99682b1684249ad0a5b1e6415f33,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2701226052809377986, guid: fcff99682b1684249ad0a5b1e6415f33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1037,6 +1047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701226052809377999, guid: fcff99682b1684249ad0a5b1e6415f33,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcff99682b1684249ad0a5b1e6415f33, type: 3}
