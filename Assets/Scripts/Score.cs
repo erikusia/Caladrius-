@@ -11,13 +11,32 @@ public class Score : MonoBehaviour
     public Text highScoreText;
 
     // スコア
-    public static float score = 0;
+    public static float score = 0.0f;
 
     // ハイスコア
-    public static float highScore = 0;
+    public static float highScore = 0.0f;
+
+    public float rate = 1;
 
     // PlayerPrefsで保存するためのキー
     public string highScoreKey = "highScore";
+
+    private static Score instance;
+    
+    //プロバティ
+    public static Score Instance
+    {
+        get
+        {
+            
+            return instance;
+        }
+    }
+
+    void Awake()
+    {
+        instance = this;
+    }
 
 
     // Start is called before the first frame update
@@ -57,9 +76,23 @@ public class Score : MonoBehaviour
     }
 
     // ポイントの追加
-    public void AddPoint(int point)
+    public void AddPoint(float point)
     {
         score = score + point;
+        Debug.Log("Score=" + score);
+    }
+
+    public void AddDestroyPoint(float point)
+    {
+        score = score + (point * rate);
+
+        Debug.Log("Score=" + score);
+        rate = rate + 1.33333f;
+    }
+
+    public void ResetRate()
+    {
+        rate = 1;
     }
 
     // ハイスコアの保存

@@ -29,6 +29,7 @@ public class player : MonoBehaviour
     Enemy AttackEnemy;
     Enemy2 AttackEnemy2;
     public float hp = 3;
+    
 
 
     GameObject[] playerIcons;
@@ -68,6 +69,8 @@ public class player : MonoBehaviour
         InputX = Input.GetAxisRaw("Horizontal");
         MoveZ = Input.GetAxisRaw("Vertical") * speed;
         Vector3 direction = new Vector3(MoveX, 0, MoveZ);
+
+        Debug.Log("MOveX=" + MoveX + "MoveZ" + MoveZ);
 
         timeCount += 1;
 
@@ -128,10 +131,10 @@ public class player : MonoBehaviour
             {
                 Invoke("Retry", 0.01f);
                 AttackEnemy = col.gameObject.GetComponent<Enemy>();
-                AttackEnemy2 = col.gameObject.GetComponent<Enemy2>();
+
                 // ヒットポイントを減らす
                 hp = hp - AttackEnemy.power;
-                hp = hp - AttackEnemy2.power;
+
                 Destroy(col.gameObject);
 
                 if (hp == 2)
@@ -141,6 +144,7 @@ public class player : MonoBehaviour
                     destroyCount += 1;
                     StartCoroutine("Blink");
                     UpdatePlayerIcons();
+                    Score.Instance.ResetRate();
 
                 }
 
@@ -150,6 +154,7 @@ public class player : MonoBehaviour
                     destroyCount += 1;
                     StartCoroutine("Blink");
                     UpdatePlayerIcons();
+                    Score.Instance.ResetRate();
                 }
 
                 if (hp <= 0)
@@ -172,10 +177,7 @@ public class player : MonoBehaviour
             {
                 Invoke("Retry", 0.01f);
                 enemyBullet = col.gameObject.GetComponent<Bullet>();
-                enemyBullet2 = col.gameObject.GetComponent<Bullet>();
-                // ヒットポイントを減らす
                 hp = hp - enemyBullet.power;
-                hp = hp - enemyBullet2.power;
                 Destroy(col.gameObject);
 
                 if (hp == 2)
@@ -185,6 +187,7 @@ public class player : MonoBehaviour
                     destroyCount += 1;
                     StartCoroutine("Blink");
                     UpdatePlayerIcons();
+                    Score.Instance.ResetRate();
 
                 }
 
@@ -194,6 +197,7 @@ public class player : MonoBehaviour
                     destroyCount += 1;
                     StartCoroutine("Blink");
                     UpdatePlayerIcons();
+                    Score.Instance.ResetRate();
                 }
 
                 if (hp <= 0)
@@ -211,6 +215,8 @@ public class player : MonoBehaviour
                     SceneManager.LoadScene("GameOver");
                 }
             }
+
+
 
             //if (col.gameObject.CompareTag("Enemy"))
             //{

@@ -21,7 +21,7 @@ public class Enemy2 : MonoBehaviour
 
     Score score;
 
-    public float EnemyScore2 = 30.0f;
+    public float EnemyScore2 = 20.0f;
 
     PlayerShield playerShield;
     // Start is called before the first frame update
@@ -54,6 +54,13 @@ public class Enemy2 : MonoBehaviour
         transform.position = Vector3.Lerp(startpos, endpos, nowpos);
     }
 
+    void PlayerDes()
+    {
+        Score.Instance.AddDestroyPoint(EnemyScore2);
+        Mathf.Floor(EnemyScore2);
+    }
+
+
     void OnTriggerEnter(Collider col)
     {
 
@@ -66,10 +73,11 @@ public class Enemy2 : MonoBehaviour
             hp = hp - playerBullet.power;
             if (hp <= 0)
             {
+                PlayerDes();
+
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
 
-                Score.score += EnemyScore2;
             }
         }
         //if (col.gameObject.tag == "Beem")
@@ -91,7 +99,6 @@ public class Enemy2 : MonoBehaviour
             playerShield = col.gameObject.GetComponent<PlayerShield>();
             Destroy(gameObject);
             Debug.Log("敵死亡");
-            Score.score += EnemyScore2;
         }
 
         if (col.gameObject.tag == "Beem")
@@ -105,7 +112,6 @@ public class Enemy2 : MonoBehaviour
             {
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
-                Score.score += EnemyScore2 * 2;
             }
         }
 
