@@ -81,7 +81,7 @@ public class Gage3 : MonoBehaviour
             else if (time % 60 == 0 && (!Input.GetKey(KeyCode.E) || !Input.GetButton("Bbutton")))
             {
                 Debug.Log(gage);
-                gage += 10;
+                gage += 2;
             }
             else
             {
