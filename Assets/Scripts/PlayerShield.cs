@@ -40,25 +40,6 @@ public class PlayerShield : MonoBehaviour
         transform.eulerAngles = lot;
     }
 
-    //IEnumerator PlayerShot()
-    //{
-    //    while (true)
-    //    {
-    //        if (Input.GetKey(KeyCode.O))
-    //        {
-    //            for (int i = 0; i < 3; i++)
-    //            {
-    //                Transform shotPosition = transform.GetChild(i);
-    //                Debug.Log("出てます");
-    //                //shotPositionの位置方向で
-    //                character.Shot(shotPosition);
-    //            }
-    //            yield return new WaitForSeconds(shotinterval);
-    //        }
-    //        yield return null;
-    //    }
-    //}
-
 
     void OnTriggerEnter(Collider col)
     {
@@ -72,7 +53,7 @@ public class PlayerShield : MonoBehaviour
         if (col.gameObject.tag == "EnemyBullet")
         {
             Debug.Log(gameObject);
-           // Destroy(gameObject);
+           //Destroy(gameObject);
         }
     }
 }

@@ -37,7 +37,7 @@ public class Gage3 : MonoBehaviour
         while (true)
         {
             
-            if (MyInput.MyInputKey(KeyCode.E) || MyInput.MyInputButton("Bbutton"))
+            if (Input.GetKey(KeyCode.E) || Input.GetButton("Bbutton"))
             {
                if( particle.isPlaying  == false)
                 {
