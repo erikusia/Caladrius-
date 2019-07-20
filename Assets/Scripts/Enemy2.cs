@@ -19,9 +19,7 @@ public class Enemy2 : MonoBehaviour
 
     Bullet playerBullet;
 
-    Score score;
-
-    public float EnemyScore2 = 20.0f;
+    Bullet Beem;
 
     PlayerShield playerShield;
     // Start is called before the first frame update
@@ -54,17 +52,26 @@ public class Enemy2 : MonoBehaviour
         transform.position = Vector3.Lerp(startpos, endpos, nowpos);
     }
 
-    void PlayerDes()
-    {
-        Score.Instance.AddDestroyPoint(EnemyScore2);
-        Mathf.Floor(EnemyScore2);
-    }
-
-
     void OnTriggerEnter(Collider col)
     {
 
         if (col.gameObject.tag == "PlayerBullet")
+        {
+                playerBullet = col.gameObject.GetComponent<Bullet>();
+                //Beem = col.gameObject.GetComponent<Bullet>();
+
+                Debug.Log("敵Hit");
+                // ヒットポイントを減らす
+                hp = hp - playerBullet.power;
+               // hp = hp - playerBullet.power;
+                if (hp <= 0)
+                {
+                    Destroy(gameObject);
+                    Debug.Log("敵死亡");
+                }
+        }
+
+        if (col.gameObject.tag == "Beem")
         {
             playerBullet = col.gameObject.GetComponent<Bullet>();
 
@@ -73,11 +80,8 @@ public class Enemy2 : MonoBehaviour
             hp = hp - playerBullet.power;
             if (hp <= 0)
             {
-                PlayerDes();
-
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
-
             }
         }
         //if (col.gameObject.tag == "Beem")
@@ -99,20 +103,6 @@ public class Enemy2 : MonoBehaviour
             playerShield = col.gameObject.GetComponent<PlayerShield>();
             Destroy(gameObject);
             Debug.Log("敵死亡");
-        }
-
-        if (col.gameObject.tag == "Beem")
-        {
-            playerBullet = col.gameObject.GetComponent<Bullet>();
-
-            Debug.Log("敵に特殊ビームHit");
-            // ヒットポイントを減らす
-            hp = hp - playerBullet.power;
-            if (hp <= 0)
-            {
-                Destroy(gameObject);
-                Debug.Log("敵死亡");
-            }
         }
 
     }

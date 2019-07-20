@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8218908050532269168}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: muzzle6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8218908050549753070}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: muzzle5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8218908050774836911}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: muzzle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8218908051024803900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: muzzle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 8218908052013857628}
   - component: {fileID: 8218908052013857629}
   - component: {fileID: 8129222964998126345}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SF_Corvette-F3
   m_TagString: BossEnemy
   m_Icon: {fileID: 0}
@@ -268,9 +268,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 0
-  shotinterval: 1
+  shotinterval: 0.3
   PlayerBullet: {fileID: 0}
-  EnemyBullet: {fileID: 3675266543846072961, guid: 02aafbe967f53ad4698797bd66a38904,
+  EnemyBullet: {fileID: 1392749161896052424, guid: bcc2f58caa443044383323b77e06341f,
     type: 3}
   burstbullet: {fileID: 4136641022522549595, guid: 410259efad5cd584a802c68eb29b0696,
     type: 3}
@@ -303,7 +303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8218908051420647150}
   - component: {fileID: 8218908051420647151}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: muzzle0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8218908051604143443}
   - component: {fileID: 8218908051604143440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: muzzle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8218908051813655085}
   - component: {fileID: 8218908051813655074}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: muzzle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

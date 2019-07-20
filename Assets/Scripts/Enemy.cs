@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     float rate;
 
     Bullet playerBullet;
+    Bullet Beem;
+
+
+
     PlayerShield playerShield;
 
     // Start is called before the first frame update
@@ -28,7 +32,7 @@ public class Enemy : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.7f);
-            for (int i=0;i<transform.childCount;i++)
+            for (int i = 0; i < transform.childCount; i++)
             {
                 Transform shotPosition = transform.GetChild(i);
 
@@ -37,7 +41,7 @@ public class Enemy : MonoBehaviour
             }
 
             yield return new WaitForSeconds(character.shotinterval);
-            
+
         }
     }
 
@@ -59,6 +63,20 @@ public class Enemy : MonoBehaviour
 
         if (col.gameObject.tag == "PlayerBullet")
         {
+                playerBullet = col.gameObject.GetComponent<Bullet>();
+
+                Debug.Log("敵Hit");
+                // ヒットポイントを減らす
+                hp = hp - playerBullet.power;
+                if (hp <= 0)
+                {
+                    Destroy(gameObject);
+                    Debug.Log("敵死亡");
+                }    
+        }
+
+        if (col.gameObject.tag == "Beem")
+        {
             playerBullet = col.gameObject.GetComponent<Bullet>();
 
             Debug.Log("敵Hit");
@@ -71,21 +89,21 @@ public class Enemy : MonoBehaviour
                 Debug.Log("敵死亡");
             }
         }
-        //if (col.gameObject.tag == "Beem")
-        //{
-        //    playerBullet = col.gameObject.GetComponent<Bullet>();
+            //if (col.gameObject.tag == "Beem")
+            //{
+            //    playerBullet = col.gameObject.GetComponent<Bullet>();
 
-        //    Debug.Log("敵Hit");
-        //    // ヒットポイントを減らす
-        //    hp = hp - playerBullet.power;
-        //    if (hp <= 0)
-        //    {
-        //        Destroy(gameObject);
-        //        Debug.Log("敵死亡");
-        //    }
-        //}
+            //    Debug.Log("敵Hit");
+            //    // ヒットポイントを減らす
+            //    hp = hp - playerBullet.power;
+            //    if (hp <= 0)
+            //    {
+            //        Destroy(gameObject);
+            //        Debug.Log("敵死亡");
+            //    }
+            //}
 
-        if (col.gameObject.tag == "PlayerShield")
+            if (col.gameObject.tag == "PlayerShield")
         {
             playerShield = col.gameObject.GetComponent<PlayerShield>();
             Destroy(gameObject);
