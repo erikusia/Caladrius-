@@ -12,7 +12,7 @@ TagManager:
   - Beem
   - PlayerHp
   - PlayerShield
-  - BeemDestroy
+  - Enemy2
   layers:
   - Default
   - TransparentFX
@@ -24,8 +24,8 @@ TagManager:
   - 
   - Bullet
   - Enemy
-  - BeemDestroy
-  - Beem
+  - 
+  - 
   - 
   - 
   - 

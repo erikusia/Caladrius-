@@ -13,7 +13,7 @@ public class Enemy2 : MonoBehaviour
     float time;
     float distance;
 
-    public int power = 1;
+    public float power = 1;
 
     public float hp = 1;
 
@@ -47,7 +47,7 @@ public class Enemy2 : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        Debug.Log(time);
+        //Debug.Log(time);
         float nowpos = (time * speed) / distance;
         transform.position = Vector3.Lerp(startpos, endpos, nowpos);
     }
