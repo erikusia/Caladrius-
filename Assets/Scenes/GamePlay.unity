@@ -927,12 +927,17 @@ PrefabInstance:
         type: 3}
       propertyPath: collider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1906949916}
     - target: {fileID: 4463323154875568504, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: particle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1906949918}
+    - target: {fileID: 4463323154875568504, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: sound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ededc0c04a0f7741b08e2415b7937b4, type: 3}
     - target: {fileID: 1433136835463384790, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: m_Enabled
@@ -1413,3 +1418,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dde76761c88498c45a2253f4458e2cf5, type: 3}
+--- !u!135 &1906949916 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 1826783092125480854, guid: 61ab61291e234f641beaee72e5f35591,
+    type: 3}
+  m_PrefabInstance: {fileID: 238911885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1906949918 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4661648251026432398, guid: 61ab61291e234f641beaee72e5f35591,
+    type: 3}
+  m_PrefabInstance: {fileID: 238911885}
+  m_PrefabAsset: {fileID: 0}
