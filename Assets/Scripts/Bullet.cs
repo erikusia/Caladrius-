@@ -22,14 +22,34 @@ public class Bullet : MonoBehaviour
         rigidbody.velocity = transform.forward * BulletSpeed;
     }
 
+    //void OnTriggerEnter(Collider col)
+    //{
+    //    if (col.gameObject.tag == "PlayerShield")
+    //    {
+    //        playerShield = col.gameObject.GetComponent<PlayerShield>();
+    //        Destroy(gameObject);
+    //        Debug.Log("敵死亡");
+    //    }
+    //}
+
+
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "PlayerShield")
-        {
-            playerShield = col.gameObject.GetComponent<PlayerShield>();
-            Destroy(gameObject);
-            Debug.Log("敵死亡");
-        }
+
+            if (gameObject.tag != "PlayerBullet")
+            {
+                playerShield = col.gameObject.GetComponent<PlayerShield>();
+                Destroy(gameObject);
+                Debug.Log("敵の弾死亡");
+                if (col.gameObject.tag == "PlayerShield")
+                {
+                    playerShield = col.gameObject.GetComponent<PlayerShield>();
+                    Destroy(gameObject);
+                    Debug.Log("敵の弾死亡");
+                }
+            }
+
+
     }
 
 

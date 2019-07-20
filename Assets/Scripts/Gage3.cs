@@ -118,7 +118,7 @@ public class Gage3 : MonoBehaviour
 
             if (timeCount % 10 == 0)
             {
-                gage += 2.0f * Time.deltaTime;
+                gage += 0.5f * Time.deltaTime;
             }
 
             gage = Mathf.Clamp(gage, 0, 100);
