@@ -36,7 +36,7 @@ public class Gage : MonoBehaviour
 
         if (gage >= 0)
         {
-            if (MyInput.MyInputKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
+            if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
             {
                 gage -= 10f;
                 gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
@@ -54,7 +54,7 @@ public class Gage : MonoBehaviour
 
                     character.Beem(shotposP0);
                     audioSource.PlayOneShot(sound1);
-                    Debug.Log("ビーム");
+                    Debug.Log("特殊弾1が出ています");
                 //}
             }
         }
