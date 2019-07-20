@@ -127,10 +127,10 @@ public class player : MonoBehaviour
             {
                 Invoke("Retry", 0.01f);
                 AttackEnemy = col.gameObject.GetComponent<Enemy>();
-                AttackEnemy2 = col.gameObject.GetComponent<Enemy2>();
+
                 // ヒットポイントを減らす
                 hp = hp - AttackEnemy.power;
-                hp = hp - AttackEnemy2.power;
+
                 Destroy(col.gameObject);
 
                 if (hp == 2)
