@@ -13,6 +13,8 @@ public class PlayerShield : MonoBehaviour
     public float shotinterval;
     public GameObject bulletP;
 
+    PlayerShield playerShield;
+
     Vector3 lot;
 
     List<ParticleSystem.Particle> m_exitList = new List<ParticleSystem.Particle>();
@@ -45,15 +47,22 @@ public class PlayerShield : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            Debug.Log(gameObject);
-            //Destroy(gameObject);
+            
+                playerShield = col.gameObject.GetComponent<PlayerShield>();
+
+                Debug.Log(col);
+            Destroy(col.gameObject);
 
         }
 
         if (col.gameObject.tag == "EnemyBullet")
         {
             Debug.Log(gameObject);
-           //Destroy(gameObject);
+
+            playerShield = col.gameObject.GetComponent<PlayerShield>();
+
+            Debug.Log(col);
+            Destroy(col.gameObject);
         }
     }
 }

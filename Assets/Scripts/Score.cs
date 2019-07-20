@@ -11,13 +11,32 @@ public class Score : MonoBehaviour
     public Text highScoreText;
 
     // スコア
-    private int score;
+    public static float score = 0.0f;
 
     // ハイスコア
-    private int highScore;
+    public static float highScore = 0.0f;
+
+    public float rate = 0.5f;
 
     // PlayerPrefsで保存するためのキー
-    private string highScoreKey = "highScore";
+    public string highScoreKey = "highScore";
+
+    private static Score instance;
+    
+    //プロバティ
+    public static Score Instance
+    {
+        get
+        {
+            
+            return instance;
+        }
+    }
+
+    void Awake()
+    {
+        instance = this;
+    }
 
 
     // Start is called before the first frame update
@@ -27,6 +46,7 @@ public class Score : MonoBehaviour
         PlayerPrefs.DeleteAll();
     }
 
+    
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +54,10 @@ public class Score : MonoBehaviour
         if (highScore < score)
         {
             highScore = score;
+
+            PlayerPrefs.SetFloat(highScoreKey, highScore);
+
+            highScoreText.text = "HighScore" + highScore.ToString();
         }
 
         // スコア・ハイスコアを表示する
@@ -48,20 +72,34 @@ public class Score : MonoBehaviour
         score = 0;
 
         // ハイスコアを取得する。保存されてなければ0を取得する。
-        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        highScore = PlayerPrefs.GetFloat(highScoreKey, 0);
     }
 
     // ポイントの追加
-    public void AddPoint(int point)
+    public void AddPoint(float point)
     {
         score = score + point;
+        Debug.Log("Score=" + score);
+    }
+
+    public void AddDestroyPoint(float point)
+    {
+        score = score + (point * rate);
+
+        Debug.Log("Score=" + score);
+        rate = rate + 0.3f;
+    }
+
+    public void ResetRate()
+    {
+        rate = 0.5f;
     }
 
     // ハイスコアの保存
     public void Save()
     {
         // ハイスコアを保存する
-        PlayerPrefs.SetInt(highScoreKey, highScore);
+        PlayerPrefs.SetFloat(highScoreKey, highScore);
         PlayerPrefs.Save();
 
         // ゲーム開始前の状態に戻す

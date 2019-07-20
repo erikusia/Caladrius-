@@ -54,7 +54,7 @@ MeshRenderer:
   m_GameObject: {fileID: 2623618608310554008}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -147,6 +147,7 @@ MonoBehaviour:
   rotspeed: 7
   power: 1
   hp: 1
+  EnemyScore: 10
 --- !u!1 &2624735699381714571
 GameObject:
   m_ObjectHideFlags: 0

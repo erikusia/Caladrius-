@@ -10,26 +10,35 @@ public class Gage3 : MonoBehaviour
     float gage = 100;
     private int timeCount;
     Character character;
+    [SerializeField]
     ParticleSystem particle;
+    [SerializeField]
     Collider collider;
+
+    [SerializeField]
+    float shotinterval;
+    Gage gage1;
+
+    static bool isCheck_Input;
+
+    public AudioClip sound1;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         character = GetComponent<Character>();
         slider = GameObject.Find("ZSlider3").GetComponent<Slider>();
-        
-        particle = GameObject.Find("PlayerShield 1").GetComponent<ParticleSystem>();
-        collider = GameObject.Find("PlayerShield 1").GetComponent<Collider>();
-        collider.enabled = false;
-
         StartCoroutine(PlayerShot());
-        //Debug.Log(particle);
+        collider.enabled = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeCount += 1;
+
     }
 
     IEnumerator PlayerShot()
@@ -39,6 +48,7 @@ public class Gage3 : MonoBehaviour
             
             if (Input.GetKey(KeyCode.E) || Input.GetButton("Bbutton"))
             {
+
                if( particle.isPlaying  == false)
                 {
                     particle.Play(true);
@@ -46,7 +56,7 @@ public class Gage3 : MonoBehaviour
                 }
                 if (gage > 0)
                 {
-
+                  
                     for (int i = 0; i < 3; i++)
                     {
                         Transform shotPosition = transform.GetChild(i);
@@ -55,18 +65,27 @@ public class Gage3 : MonoBehaviour
                         character.Shot(shotPosition);
                     }
                     gage -= 1f;
-                    //Debug.Log(gage);
-                    yield return null;
+                    yield return new WaitForSeconds(shotinterval);
                 }
                 else if (gage <= 0)
                 {
                     Debug.Log("撃てません！");
-                }
+                    {
+                        if (particle.isPlaying == true)
+                        {
+                            particle.Stop(true);
+                            collider.enabled = false;
+                        }
 
+                    }
+
+                    break;
+                }
+                audioSource.PlayOneShot(sound1);
             }
-            else 
+            else /*if(Input.GetKeyUp(KeyCode.E) || Input.GetButtonUp("Bbutton"))*/
             {
-                if (particle.isPlaying)
+                if (particle.isPlaying == true)
                 {
                     particle.Stop(true);
                     collider.enabled = false;
@@ -74,9 +93,9 @@ public class Gage3 : MonoBehaviour
 
             }
 
-            if (timeCount % 10 == 0)
+            if (timeCount % 20 == 0)
             {
-                gage += 2.0f * Time.deltaTime;
+                gage += 0.5f;
             }
 
             gage = Mathf.Clamp(gage, 0, 100);
