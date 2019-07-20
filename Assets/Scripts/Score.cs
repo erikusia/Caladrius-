@@ -16,7 +16,7 @@ public class Score : MonoBehaviour
     // ハイスコア
     public static float highScore = 0.0f;
 
-    public float rate = 1;
+    public float rate = 0.5f;
 
     // PlayerPrefsで保存するためのキー
     public string highScoreKey = "highScore";
@@ -87,12 +87,12 @@ public class Score : MonoBehaviour
         score = score + (point * rate);
 
         Debug.Log("Score=" + score);
-        rate = rate + 1.33333f;
+        rate = rate + 0.3f;
     }
 
     public void ResetRate()
     {
-        rate = 1;
+        rate = 0.5f;
     }
 
     // ハイスコアの保存

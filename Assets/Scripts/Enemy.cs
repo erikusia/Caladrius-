@@ -70,6 +70,7 @@ public class Enemy : MonoBehaviour
                 hp = hp - playerBullet.power;
                 if (hp <= 0)
                 {
+                    PlayerDes();
                     Destroy(gameObject);
                     Debug.Log("敵死亡");
                 }    
@@ -110,19 +111,20 @@ public class Enemy : MonoBehaviour
             Debug.Log("敵死亡");
         }
 
-        if (col.gameObject.tag == "Beem")
-        {
-            playerBullet = col.gameObject.GetComponent<Bullet>();
+        //if (col.gameObject.tag == "Beem")
+        //{
+        //    playerBullet = col.gameObject.GetComponent<Bullet>();
 
-            Debug.Log("敵に特殊ビームHit");
-            // ヒットポイントを減らす
-            hp = hp - playerBullet.power;
-            if (hp <= 0)
-            {
-                Destroy(gameObject);
-                Debug.Log("敵死亡");
-            }
-        }
+        //    Debug.Log("敵に特殊ビームHit");
+        //    // ヒットポイントを減らす
+        //    hp = hp - playerBullet.power;
+        //    if (hp <= 0)
+        //    {
+
+        //        Destroy(gameObject);
+        //        Debug.Log("敵死亡");
+        //    }
+        //}
 
     }
 

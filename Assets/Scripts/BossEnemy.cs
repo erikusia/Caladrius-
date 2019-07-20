@@ -19,6 +19,7 @@ public class BossEnemy : MonoBehaviour
 
     public float hp = 1;
 
+    public float BossEnemyScore = 10000.0f;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -140,7 +141,11 @@ public class BossEnemy : MonoBehaviour
 
     //    }
     //}
-
+    void PlayerDes()
+    {
+        Score.Instance.AddPoint(BossEnemyScore);
+        Mathf.Floor(BossEnemyScore);
+    }
 
     void OnTriggerEnter(Collider col)
     {
@@ -156,6 +161,7 @@ public class BossEnemy : MonoBehaviour
 
             if (hp <= 0)
             {
+                PlayerDes();
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
                 SceneManager.LoadScene("GameClear");
@@ -174,6 +180,7 @@ public class BossEnemy : MonoBehaviour
 
             if (hp <= 0)
             {
+                PlayerDes();
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
                 SceneManager.LoadScene("GameClear");
