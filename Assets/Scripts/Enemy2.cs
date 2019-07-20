@@ -13,7 +13,7 @@ public class Enemy2 : MonoBehaviour
     float time;
     float distance;
 
-    public int power = 1;
+    public float power = 1;
 
     public float hp = 1;
 

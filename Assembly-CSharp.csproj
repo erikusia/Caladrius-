@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\BeemDestroy.cs" />
     <Compile Include="Assets\Scripts\Blink.cs" />
     <Compile Include="Assets\Scripts\BossEnemy.cs" />
+    <Compile Include="Assets\Scripts\BossHpFade.cs" />
     <Compile Include="Assets\Scripts\BossMove.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\burst.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Scripts\InputCheck.cs" />
     <Compile Include="Assets\Scripts\iTweenPathMove.cs" />
     <Compile Include="Assets\Scripts\muzzleRotation.cs" />
+    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\NoInput.cs" />
     <Compile Include="Assets\Scripts\NoRotation.cs" />
     <Compile Include="Assets\Scripts\player.cs" />

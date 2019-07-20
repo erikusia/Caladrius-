@@ -26,6 +26,7 @@ public class player : MonoBehaviour
 
     Bullet enemyBullet;
     Enemy AttackEnemy;
+    Enemy2 AttackEnemy2;
     public float hp = 3;
 
 
@@ -126,8 +127,51 @@ public class player : MonoBehaviour
             {
                 Invoke("Retry", 0.01f);
                 AttackEnemy = col.gameObject.GetComponent<Enemy>();
+                AttackEnemy2 = col.gameObject.GetComponent<Enemy2>();
                 // ヒットポイントを減らす
                 hp = hp - AttackEnemy.power;
+                hp = hp - AttackEnemy2.power;
+                Destroy(col.gameObject);
+
+                if (hp == 2)
+                {
+
+                    Debug.Log("敵からダメージを喰らっている");
+                    destroyCount += 1;
+                    StartCoroutine("Blink");
+                    UpdatePlayerIcons();
+
+                }
+
+                if (hp == 1)
+                {
+                    Debug.Log("敵からダメージを喰らっている2");
+                    destroyCount += 1;
+                    StartCoroutine("Blink");
+                    UpdatePlayerIcons();
+                }
+
+                if (hp <= 0)
+                {
+                    Debug.Log("敵からダメージを喰らっている3");
+                    //HPが0となったら破壊された回数を1増やす
+                    destroyCount += 1;
+
+                    // 命令ブロック（メソッド）を呼び出す。
+                    UpdatePlayerIcons();
+
+                    Destroy(gameObject);
+                    Debug.Log("敵に当たり死亡");
+
+                    SceneManager.LoadScene("GameOver");
+                }
+            }
+            else if (col.gameObject.CompareTag("Enemy2"))
+            {
+                Invoke("Retry", 0.01f);
+                AttackEnemy2 = col.gameObject.GetComponent<Enemy2>();
+                // ヒットポイントを減らす
+                hp = hp - AttackEnemy2.power;
                 Destroy(col.gameObject);
 
                 if (hp == 2)
