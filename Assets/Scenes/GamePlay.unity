@@ -864,6 +864,11 @@ PrefabInstance:
       propertyPath: particle
       value: 
       objectReference: {fileID: 4661648251064016899}
+    - target: {fileID: 4463323154875568504, guid: 36fea44e211c5bb468668ca79f4c017f,
+        type: 3}
+      propertyPath: sound1
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ededc0c04a0f7741b08e2415b7937b4, type: 3}
     - target: {fileID: 1433136835463384790, guid: 36fea44e211c5bb468668ca79f4c017f,
         type: 3}
       propertyPath: m_Enabled
@@ -982,6 +987,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2701226052809377993, guid: fcff99682b1684249ad0a5b1e6415f33,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2701226052809377986, guid: fcff99682b1684249ad0a5b1e6415f33,
         type: 3}
