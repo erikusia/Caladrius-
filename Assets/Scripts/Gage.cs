@@ -44,7 +44,7 @@ public class Gage : MonoBehaviour
                 //if (MyInput.MyInputKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
                 //{
 
-                    Transform shotposP0 = transform.GetChild(6);
+                    Transform shotposP0 = transform.GetChild(5);
 
                     if(t<0.01f)
                     {

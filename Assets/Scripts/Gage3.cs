@@ -70,7 +70,7 @@ public class Gage3 : MonoBehaviour
                 else if (gage <= 0)
                 {
                     Debug.Log("撃てません！");
-            {
+                    {
                         if (particle.isPlaying == true)
                         {
                             particle.Stop(true);
@@ -83,7 +83,15 @@ public class Gage3 : MonoBehaviour
                 }
                 audioSource.PlayOneShot(sound1);
             }
-           
+            else /*if(Input.GetKeyUp(KeyCode.E) || Input.GetButtonUp("Bbutton"))*/
+            {
+                if (particle.isPlaying == true)
+                {
+                    particle.Stop(true);
+                    collider.enabled = false;
+                }
+
+            }
 
             if (timeCount % 20 == 0)
             {

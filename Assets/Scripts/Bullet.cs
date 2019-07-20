@@ -36,18 +36,18 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
 
-            if (gameObject.tag != "PlayerBullet")
-            {
-                playerShield = col.gameObject.GetComponent<PlayerShield>();
-                Destroy(gameObject);
-                Debug.Log("敵の弾死亡");
-                if (col.gameObject.tag == "PlayerShield")
-                {
-                    playerShield = col.gameObject.GetComponent<PlayerShield>();
-                    Destroy(gameObject);
-                    Debug.Log("敵の弾死亡");
-                }
-            }
+            //if (gameObject.tag != "PlayerBullet")
+            //{
+            //    playerShield = col.gameObject.GetComponent<PlayerShield>();
+             
+            //    Debug.Log(col);
+            //    if (col.gameObject.tag == "PlayerShield")
+            //    {
+            //        playerShield = col.gameObject.GetComponent<PlayerShield>();
+            //        Destroy(gameObject);
+            //        Debug.Log("敵の弾死亡");
+            //    }
+            //}
 
 
     }

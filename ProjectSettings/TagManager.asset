@@ -13,6 +13,7 @@ TagManager:
   - PlayerHp
   - PlayerShield
   - Enemy2
+  - BossEnemy
   layers:
   - Default
   - TransparentFX

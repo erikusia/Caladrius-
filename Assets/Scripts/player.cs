@@ -107,7 +107,7 @@ public class player : MonoBehaviour
                 for (int i = 0; i < 3; i++)
                 {
                     Transform shotPosition = transform.GetChild(i);
-                    Debug.Log("出てます");
+                    //Debug.Log("出てます");
                     //shotPositionの位置方向で
                     character.Shot(shotPosition);
                 }

@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 8129222964998126345}
   m_Layer: 0
   m_Name: SF_Corvette-F3
-  m_TagString: Enemy
+  m_TagString: BossEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,6 +254,7 @@ MonoBehaviour:
   TimeCount: 0
   power: 1
   hp: 1000
+  BossScore: 1000
 --- !u!114 &8218908052013857629
 MonoBehaviour:
   m_ObjectHideFlags: 0
