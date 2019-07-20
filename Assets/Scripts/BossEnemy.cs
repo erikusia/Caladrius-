@@ -28,9 +28,9 @@ public class BossEnemy : MonoBehaviour
         character = GetComponent<Character>();
         character.Move(transform.forward * -1);
         state = 0;
-  
+
         HPSlider.value = hp;
-        
+
 
         while (true)
         {
@@ -49,7 +49,7 @@ public class BossEnemy : MonoBehaviour
 
                         //撃つ処理
                         character.Shot0(shotPosition0);
-                        if(TimeCount >= 5)
+                        if (TimeCount >= 5)
                         {
                             state = 1;
                         }
@@ -93,14 +93,14 @@ public class BossEnemy : MonoBehaviour
                         character.Shot0(shotposP5);
                         character.Shot2(shotPosition3);
                         character.Shot2(shotPosition4);
-                        if (TimeCount>=20)
+                        if (TimeCount >= 20)
                         {
                             Debug.Log("3");
                             state = 3;
                         }
                         break;
                     case 3:
-                        if(TimeCount>=30)
+                        if (TimeCount >= 30)
                         {
                             state = 1;
                             TimeCount = 0;
@@ -160,7 +160,25 @@ public class BossEnemy : MonoBehaviour
                 Debug.Log("敵死亡");
                 SceneManager.LoadScene("GameClear");
             }
+
         }
-        
+
+        if (col.gameObject.tag == "Beem")
+        {
+            playerBullet = col.gameObject.GetComponent<Bullet>();
+
+            Debug.Log(HPSlider.value);
+            // ヒットポイントを減らす
+            hp = hp - playerBullet.power;
+            HPSlider.value = hp;
+
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+                Debug.Log("敵死亡");
+                SceneManager.LoadScene("GameClear");
+            }
+        }
+
     }
 }

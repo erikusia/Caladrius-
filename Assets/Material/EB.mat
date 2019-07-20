@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyBullet
+  m_Name: EB
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -73,5 +73,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.7899308, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 0.9809087, b: 0.622, a: 1}
+    - _Color: {r: 0.9607843, g: 0.54029095, b: 0.06666665, a: 1}
+    - _EmissionColor: {r: 6.8370442, g: 7.560784, b: 0.19792622, a: 1}

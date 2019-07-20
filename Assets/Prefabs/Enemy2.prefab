@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5135791097151510942}
   - component: {fileID: 5135791097151510943}
   - component: {fileID: 5135791097151510940}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5135791097233237954}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
