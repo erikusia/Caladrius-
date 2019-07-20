@@ -19,6 +19,8 @@ public class Enemy2 : MonoBehaviour
 
     Bullet playerBullet;
 
+    Bullet Beem;
+
     PlayerShield playerShield;
     // Start is called before the first frame update
     IEnumerator Start()
@@ -54,6 +56,22 @@ public class Enemy2 : MonoBehaviour
     {
 
         if (col.gameObject.tag == "PlayerBullet")
+        {
+                playerBullet = col.gameObject.GetComponent<Bullet>();
+                //Beem = col.gameObject.GetComponent<Bullet>();
+
+                Debug.Log("敵Hit");
+                // ヒットポイントを減らす
+                hp = hp - playerBullet.power;
+               // hp = hp - playerBullet.power;
+                if (hp <= 0)
+                {
+                    Destroy(gameObject);
+                    Debug.Log("敵死亡");
+                }
+        }
+
+        if (col.gameObject.tag == "Beem")
         {
             playerBullet = col.gameObject.GetComponent<Bullet>();
 

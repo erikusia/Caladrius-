@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9176609176810384475}
   - component: {fileID: 5469403802897229781}
   - component: {fileID: 7304621537287188434}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: beem3
   m_TagString: Beem
   m_Icon: {fileID: 0}
