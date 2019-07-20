@@ -5,8 +5,7 @@ using UnityEngine.UI;
 using InputKey;
 
 public class Gage3 : MonoBehaviour
-{
-<<<<<<< HEAD
+{ 
 
     Slider slider;
     float gage = 100;
@@ -75,7 +74,7 @@ public class Gage3 : MonoBehaviour
                 }
 
             }
-=======
+
     //Slider slider;
     //float gage = 100;
     //private int timeCount;
@@ -192,7 +191,7 @@ public class Gage3 : MonoBehaviour
     //            }
                 
     //        }
->>>>>>> 8b99675... fuck
+
 
     //        if (timeCount % 10 == 0)
     //        {
@@ -202,14 +201,13 @@ public class Gage3 : MonoBehaviour
     //        gage = Mathf.Clamp(gage, 0, 100);
     //        slider.value = gage;
 
-<<<<<<< HEAD
+
             yield return null;
         }
     }
 
-=======
     //        yield return null;
     //    }
     //}
->>>>>>> 8b99675... fuck
+
 }

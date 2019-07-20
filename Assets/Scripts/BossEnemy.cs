@@ -14,13 +14,9 @@ public class BossEnemy : MonoBehaviour
     GameObject Bom;
 
     Bullet playerBullet;
-<<<<<<< HEAD
     public Slider HPSlider;
 
    
-=======
-    Slider HPSlider;
->>>>>>> 8b99675... fuck
     float HPber = 100;
 
     public int power = 1;
@@ -158,7 +154,7 @@ public class BossEnemy : MonoBehaviour
     void Update()
     {
         //transform.Rotate(Vector3.forward * rotspeed);
-        Bom.SetActive(true);
+        //Bom.SetActive(true);
     }
 
 
@@ -174,7 +170,8 @@ public class BossEnemy : MonoBehaviour
             hp = hp - playerBullet.power;
 
             if (hp <= 0)
-            {              
+            {
+                //Bom.SetActive(true);
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
                 SceneManager.LoadScene("GameClear");

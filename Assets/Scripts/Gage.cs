@@ -36,15 +36,15 @@ public class Gage : MonoBehaviour
 
         if (gage >= 0)
         {
-            if (MyInput.MyInputKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
+            if (Input.GetKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
             {
                 gage -= 10f;
                 gage = Mathf.Max(gage - 10.0f * Time.deltaTime, 0);
 
-                //if (MyInput.MyInputKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
-                //{
+                if (Input.GetKey(KeyCode.R) || MyInput.MyInputButton("Xbutton"))
+                {
 
-                    Transform shotposP0 = transform.GetChild(6);
+                    Transform shotposP0 = transform.GetChild(5);
 
                     if(t<0.01f)
                     {
@@ -55,7 +55,7 @@ public class Gage : MonoBehaviour
                     character.Beem(shotposP0);
                     audioSource.PlayOneShot(sound1);
                     Debug.Log("ビーム");
-                //}
+                }
             }
         }
 

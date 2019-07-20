@@ -9,7 +9,7 @@ public class BeemDestroy : MonoBehaviour
         Debug.Log(col.gameObject.name);
         GameObject beem = GameObject.FindWithTag("Beem");
         if(col.gameObject.tag == "Beem")
-        {;
+        {
             Destroy(col.gameObject);
         }
     }
