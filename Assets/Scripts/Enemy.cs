@@ -10,7 +10,11 @@ public class Enemy : MonoBehaviour
 
     public float hp = 1;
 
+    Score score;
+    Enemy enemy;
+    public float EnemyScore = 10.0f;
 
+    float rate;
 
     Bullet playerBullet;
     Bullet Beem;
@@ -47,6 +51,12 @@ public class Enemy : MonoBehaviour
         transform.Rotate(Vector3.forward * rotspeed);
     }
 
+    void PlayerDes()
+    {
+        Score.Instance.AddDestroyPoint(EnemyScore);
+        Mathf.Floor(EnemyScore);
+    }
+
 
     void OnTriggerEnter(Collider col)
     {
@@ -60,6 +70,7 @@ public class Enemy : MonoBehaviour
                 hp = hp - playerBullet.power;
                 if (hp <= 0)
                 {
+                    PlayerDes();
                     Destroy(gameObject);
                     Debug.Log("敵死亡");
                 }    
@@ -74,6 +85,7 @@ public class Enemy : MonoBehaviour
             hp = hp - playerBullet.power;
             if (hp <= 0)
             {
+                PlayerDes();
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
             }
@@ -98,6 +110,21 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("敵死亡");
         }
+
+        //if (col.gameObject.tag == "Beem")
+        //{
+        //    playerBullet = col.gameObject.GetComponent<Bullet>();
+
+        //    Debug.Log("敵に特殊ビームHit");
+        //    // ヒットポイントを減らす
+        //    hp = hp - playerBullet.power;
+        //    if (hp <= 0)
+        //    {
+
+        //        Destroy(gameObject);
+        //        Debug.Log("敵死亡");
+        //    }
+        //}
 
     }
 

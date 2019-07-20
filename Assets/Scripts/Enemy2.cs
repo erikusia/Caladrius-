@@ -19,6 +19,8 @@ public class Enemy2 : MonoBehaviour
 
     Bullet playerBullet;
 
+    public float EnemyScore2 = 20.0f;
+
     Bullet Beem;
 
     PlayerShield playerShield;
@@ -52,6 +54,12 @@ public class Enemy2 : MonoBehaviour
         transform.position = Vector3.Lerp(startpos, endpos, nowpos);
     }
 
+    void PlayerDes()
+    {
+        Score.Instance.AddDestroyPoint(EnemyScore2);
+        Mathf.Floor(EnemyScore2);
+    }
+
     void OnTriggerEnter(Collider col)
     {
 
@@ -66,6 +74,7 @@ public class Enemy2 : MonoBehaviour
                // hp = hp - playerBullet.power;
                 if (hp <= 0)
                 {
+                    PlayerDes();
                     Destroy(gameObject);
                     Debug.Log("敵死亡");
                 }
@@ -80,6 +89,7 @@ public class Enemy2 : MonoBehaviour
             hp = hp - playerBullet.power;
             if (hp <= 0)
             {
+                PlayerDes();
                 Destroy(gameObject);
                 Debug.Log("敵死亡");
             }
