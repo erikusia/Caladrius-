@@ -14,7 +14,7 @@ public class BossHpFade : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.Log(Time.time);
+        Debug.Log(Time.time);
         if (Time.time >= 15.5)
         {
             canvasGroup.alpha += Time.deltaTime;
