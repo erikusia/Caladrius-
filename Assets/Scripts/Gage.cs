@@ -8,7 +8,7 @@ public class Gage : MonoBehaviour
 {
     Slider slider;
     float gage = 100;
-    private float timeCount;
+    private int timeCount;
     Character character;
 
     private Quaternion start;
@@ -32,9 +32,9 @@ public class Gage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeCount +=1.0f;
+        timeCount += 1;
 
-        if (gage != 0)
+        if (gage > 0)
         {
             if (Input.GetKey(KeyCode.R) || Input.GetButton("Xbutton"))
             {
@@ -51,17 +51,17 @@ public class Gage : MonoBehaviour
                         t += 5;
                         shotposP0.rotation = Quaternion.Slerp(start, finish, t);
                     }
-                    Debug.Log("gage");
+
                     character.Beem(shotposP0);
                     audioSource.PlayOneShot(sound1);
                     Debug.Log("ビーム");
                 }
             }
         }
-        if (timeCount % 2 == 0)
+
+        if (timeCount % 10 == 0&&!Input.GetButton("Xbutton"))
         {
-            gage += 20.0f;
-            timeCount = 0;
+            gage += 0.5f * Time.deltaTime;
         }
 
         gage = Mathf.Clamp(gage, 0, 100);

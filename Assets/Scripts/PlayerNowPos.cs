@@ -12,6 +12,14 @@ public class PlayerNowPos : MonoBehaviour
     }
     public void Update()
     {
-        transform.LookAt(player);
+        if (player != null)
+        {
+            transform.LookAt(player);
+        }
+        else
+        {
+            transform.LookAt(null);
+        }
+       
     }
 }
