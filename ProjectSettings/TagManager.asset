@@ -11,6 +11,8 @@ TagManager:
   - HPSlider
   - Beem
   - PlayerHp
+  - PlayerShield
+  - Enemy2
   layers:
   - Default
   - TransparentFX
