@@ -64,7 +64,7 @@ public class Gage3 : MonoBehaviour
                         //shotPositionの位置方向で
                         character.Shot(shotPosition);
                     }
-                    gage -= 5;
+                    gage -= 1;
                     yield return new WaitForSeconds(shotinterval);
                 }
                 else if (gage <= 0)
@@ -78,7 +78,7 @@ public class Gage3 : MonoBehaviour
                 }
                 audioSource.PlayOneShot(sound1);
             }
-            else if (time % 60 == 0 && (!Input.GetKey(KeyCode.E) || !Input.GetButton("Bbutton")))
+            else if (time % 30 == 0 && (!Input.GetKey(KeyCode.E) || !Input.GetButton("Bbutton")))
             {
                 Debug.Log(gage);
                 gage += 2;
