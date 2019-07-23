@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlay.unity
     guid: 409990fef94d39746af837bb4842c829
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: b34cafc3392a66f4bbb2255c29fe5dc7
-  - enabled: 1
     path: Assets/Scenes/GameClear.unity
     guid: 90d9d8963792de94baa15a1aca1382fa
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: b34cafc3392a66f4bbb2255c29fe5dc7
   - enabled: 0
     path: Assets/Scenes/kaede.unity
     guid: 0de1d87c1146a6844af50f2077752cc5
