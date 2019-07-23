@@ -8,11 +8,14 @@ public class Scroll : MonoBehaviour
     Vector3 nowpos;
     Transform nowtrans;
 
+    public AudioClip sound1;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Startmove();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(sound1);
     }
 
     void Update()

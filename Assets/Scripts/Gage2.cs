@@ -51,7 +51,7 @@ public class Gage2 : MonoBehaviour
                         //shotPositionの位置方向で
                         character.specialShot(shotPosition);
                     }
-                    gage -= 50f;
+                    gage -= 2f;
                     yield return new WaitForSeconds(shotinterval);
                 }
                 //else if (gage <= 0)
@@ -62,9 +62,9 @@ public class Gage2 : MonoBehaviour
 
             }
 
-            else if (time%60==0&& (!Input.GetKey(KeyCode.F) || !Input.GetButton("Ybutton")))
+            else if (time%30==0&& (!Input.GetKey(KeyCode.F) || !Input.GetButton("Ybutton")))
             {
-                gage += 50f;
+                gage += 2.0f;
             }
 
             Debug.Log(time % 60);

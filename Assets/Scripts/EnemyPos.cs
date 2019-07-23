@@ -32,8 +32,14 @@ public class EnemyPos : MonoBehaviour
 
             nearDis = 0;
             time+= Time.deltaTime*speed;
-            targets = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach(GameObject target in targets)
+
+            List<GameObject> list = new List<GameObject>(100);
+            list.AddRange( GameObject.FindGameObjectsWithTag("Enemy") );
+            list.AddRange(GameObject.FindGameObjectsWithTag("Enemy2"));
+            list.AddRange(GameObject.FindGameObjectsWithTag("BossEnemy"));
+
+
+            foreach (GameObject target in list)
             {
                 targetPos = Vector3.Distance(target.transform.position, transform.position);
                 //Debug.Log("target"+target);
@@ -67,6 +73,14 @@ public class EnemyPos : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+        else if (col.gameObject.CompareTag("Enemy2"))
+        {
+            Destroy(gameObject);
+        }
+        else if (col.gameObject.CompareTag("BossEnemy"))
         {
             Destroy(gameObject);
         }
