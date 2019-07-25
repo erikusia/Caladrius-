@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990069399391}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990090812185}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990110715763}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990165756356}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990213142040}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990340951933}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990545374677}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990609085945}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990890818319}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990925381061}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159990957006422}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159991015092813}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159991169848626}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159991379169042}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159991440118077}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159991523587006}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159991658393662}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159991734044169}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8541159991933593157}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: muzzle0 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 8541159992024890685}
   - component: {fileID: 8541159992024890674}
   - component: {fileID: 8541159992024890687}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: circlebullets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +641,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8541159992024890679}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -651,7 +651,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 075ba803951f7504abe539c83d834380, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

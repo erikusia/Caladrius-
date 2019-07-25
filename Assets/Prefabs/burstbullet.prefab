@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4136641021329605318}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4136641022522549606}
   - component: {fileID: 4136641022522549605}
   - component: {fileID: 4136641022522549604}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: burstbullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4136641022522549595}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -94,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 146d2e03ec3e81a4c8d803dda165074f, type: 2}
+  - {fileID: 2100000, guid: 075ba803951f7504abe539c83d834380, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4136641022835136261}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: burst (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

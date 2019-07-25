@@ -7,9 +7,6 @@ public class burst : MonoBehaviour
     Character character;
     float TimeCount = 0;
 
-
-
-
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -22,9 +19,9 @@ public class burst : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.5f);
-            for (int i = 0; i < transform.childCount; i++)
+            if (TimeCount <= 10)
             {
-                if (TimeCount <= 10)
+                for (int i = 0; i < 2; i++)
                 {
                     Debug.Log("分裂しています");
 

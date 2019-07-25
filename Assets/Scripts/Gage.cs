@@ -59,9 +59,9 @@ public class Gage : MonoBehaviour
             }
         }
 
-        if (timeCount % 30 == 0&&!Input.GetButton("Xbutton"))
+        if (timeCount % 30 == 0 && (!Input.GetKey(KeyCode.R) || !Input.GetButton("Xbutton")))
         {
-            gage += 2f;
+            gage += 2.0f;
         }
 
         gage = Mathf.Clamp(gage, 0, 100);
