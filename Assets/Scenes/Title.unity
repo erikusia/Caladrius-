@@ -204,7 +204,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Space or A
+  m_Text: '
+
+    Space or A'
 --- !u!222 &511747842
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -285,7 +287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Game Start
+  m_Text: "\u30EC\u30D7\u30EA\u30AB\u30E9\u30C9\nGame Start"
 --- !u!222 &679588515
 CanvasRenderer:
   m_ObjectHideFlags: 0
